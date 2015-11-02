@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.14
+-- version 4.4.12
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-11-2015 a las 13:44:01
--- Versión del servidor: 5.6.26
--- Versión de PHP: 5.6.12
+-- Tiempo de generación: 02-11-2015 a las 19:30:12
+-- Versión del servidor: 5.6.25
+-- Versión de PHP: 5.6.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `club_estudio`
 --
+CREATE DATABASE IF NOT EXISTS `club_estudio` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `club_estudio`;
 
 -- --------------------------------------------------------
 
@@ -28,8 +30,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `categoria` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(30) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `nombre` varchar(30) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -39,12 +41,12 @@ CREATE TABLE IF NOT EXISTS `categoria` (
 
 CREATE TABLE IF NOT EXISTS `recurso` (
   `id_recurso` int(11) NOT NULL,
-  `nombre` varchar(30) COLLATE utf8_bin NOT NULL,
-  `descr` varchar(30) COLLATE utf8_bin NOT NULL,
-  `img` varchar(30) COLLATE utf8_bin NOT NULL,
-  `estado` varchar(1) COLLATE utf8_bin NOT NULL,
-  `categoria` varchar(1) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `nombre` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `descr` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `img` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `estado` varchar(1) COLLATE utf8_unicode_ci NOT NULL,
+  `categoria` varchar(1) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `recurso`
@@ -79,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `reserva` (
   `id_recurso` int(11) NOT NULL,
   `dateini` date NOT NULL,
   `datefi` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `reserva`
@@ -97,11 +99,11 @@ INSERT INTO `reserva` (`id_reserva`, `id_user`, `id_recurso`, `dateini`, `datefi
 
 CREATE TABLE IF NOT EXISTS `user` (
   `id_user` int(11) NOT NULL,
-  `nom` varchar(30) COLLATE utf8_bin NOT NULL,
-  `pass` varchar(30) COLLATE utf8_bin NOT NULL,
+  `nom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `pass` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `rol` tinyint(4) NOT NULL,
-  `img` varchar(50) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `img` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `user`

@@ -1,23 +1,93 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
-        <meta lang="es">
+        <html lang="es">
+        <meta name="description" content="Millores Jesuïtes Educació">
         <meta charset="utf-8">
-        <meta name="author" content="Raúl">
-        <meta name="description" content="">
-        <!--
-        <link rel="icon" type="image/png" href="favicon.ico">
-        <link rel="stylesheet" type="text/css" href="" media="screen" />
-        <script type="text/javascript" src=""></script>
-        -->
+        <title>Formulario login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- JQUERY -->
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script> 
+
+        <!-- BOOTSTRAP -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+        <!-- VALIDADOR -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.css"></link>
+        <script src="js/bootstrapValidator.js"></script>
+
+        <!-- Generic page styles -->
+        <link rel="stylesheet" href="css/custom.css" type="text/css"/>
+        <link rel="icon" type="image/png" href="img/favicon.png" />
     </head>
     <body>
-        <form></form>
-        <header></header>
-        <nav></nav>
-        <section></section>
-        <article></article>
-        <footer></footer>
+    <form method="post" action="validate.php" id="loginForm" name="loginForm">
+        <div class="modal fade" id="loginModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Iniciar Sessión  <img src="img/logo.png" width="144" height="70"></h4>
+
+                    </div>
+                    
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label class="control-label col-sm-3" for="user">Nombre de usuario:</label>
+                            <div class="col-sm-7">          
+                                <input type="text" class="form-control" id="user" name="user" placeholder="Introduce tu usuario" />
+                            </div>
+                        </div><br /><br />
+                        <div class="form-group">
+                            <label class="control-label col-sm-3" for="passwd">Contraseña:</label>
+                            <div class="col-sm-7">          
+                                <input type="password" class="form-control" id="passwd" name="passwd" placeholder="Introduce la contraseña" />
+                            </div>
+                        </div><br /><br />
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Inicia!</button>
+                    </div>
+                </div>
+            </div>
+             <div class="logo"><img src="img/logo.png" width="824" height="400"></div>
+        </div>
+        </form>
+
+
+        <script>  
+            $(window).load(function(){
+                $('#loginModal').modal('show');
+            });
+        </script>
+
+        <script>
+            $('#loginForm').bootstrapValidator({
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+                    user: {
+                        validators: {
+                            notEmpty: {
+                                message: 'El nombre de usuario es requerido'
+                            }
+                        }
+                    },
+                    passwd: {
+                        validators: {
+                            notEmpty: {
+                                message: 'La contraseña es requerida'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+
     </body>
 </html>
