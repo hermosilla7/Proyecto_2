@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.12
+-- version 4.4.14
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-11-2015 a las 19:30:12
--- Versión del servidor: 5.6.25
--- Versión de PHP: 5.6.11
+-- Tiempo de generación: 02-11-2015 a las 23:09:06
+-- Versión del servidor: 5.6.26
+-- Versión de PHP: 5.6.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `club_estudio`
 --
-CREATE DATABASE IF NOT EXISTS `club_estudio` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `club_estudio`;
 
 -- --------------------------------------------------------
 
@@ -31,7 +29,17 @@ USE `club_estudio`;
 CREATE TABLE IF NOT EXISTS `categoria` (
   `id` int(11) NOT NULL,
   `nombre` varchar(30) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `categoria`
+--
+
+INSERT INTO `categoria` (`id`, `nombre`) VALUES
+(1, 'Aula'),
+(2, 'Sala'),
+(3, 'Hardware y recursos'),
+(4, 'Otros');
 
 -- --------------------------------------------------------
 
@@ -53,21 +61,21 @@ CREATE TABLE IF NOT EXISTS `recurso` (
 --
 
 INSERT INTO `recurso` (`id_recurso`, `nombre`, `descr`, `img`, `estado`, `categoria`) VALUES
-(1, 'Carro portátiles', 'Carro de 25 portátiles', 'carro.jpg', '1', ''),
-(2, 'Despacho', 'Despacho para entrevistas', 'despacho1.jpg', '1', ''),
-(3, 'Despacho', 'Despacho con mesa redonda', 'despacho2.jpg', '0', ''),
-(4, 'Aula informática', 'Aula de informática norte', 'informatica1.jpg', '1', ''),
-(5, 'Aula informática', 'Aula de informática sur', 'informatica2.jpg', '1', ''),
-(6, 'Móvil', 'Móvil multimedia', 'movil1.jpg', '0', ''),
-(7, 'Móvil', 'Móvil multimedia', 'movil2.jpg', '0', ''),
-(8, 'Portátil', 'Portátil Acer', 'portatil1.jpg', '1', ''),
-(9, 'Portátil', 'Portátil Toshiba', 'portatil2.jpg', '0', ''),
-(10, 'Portátil', 'Portátil Windows', 'portatil3.jpg', '1', ''),
-(11, 'Proyector', 'Proyector Asus', 'proyector.jpg', '0', ''),
-(12, 'Sala Reuniones', 'Sala de reuniones', 'reuniones.jpg', '1', ''),
-(13, 'Aula teoria', 'Aula teoria', 'teoria1.jpg', '0', ''),
-(14, 'Aula teoria', 'Aula teoria', 'teoria2.jpg', '1', ''),
-(15, 'Aula teoria', 'Aula teoria', 'teoria3.jpg', '0', '');
+(1, 'Carro portátiles', 'Carro de 25 portátiles', 'carro.jpg', '1', '3'),
+(2, 'Despacho', 'Despacho para entrevistas', 'despacho1.jpg', '1', '2'),
+(3, 'Despacho', 'Despacho con mesa redonda', 'despacho2.jpg', '0', '2'),
+(4, 'Aula informática', 'Aula de informática norte', 'informatica1.jpg', '1', '1'),
+(5, 'Aula informática', 'Aula de informática sur', 'informatica2.jpg', '1', '1'),
+(6, 'Móvil', 'Móvil multimedia', 'movil1.jpg', '0', '3'),
+(7, 'Móvil', 'Móvil multimedia', 'movil2.jpg', '0', '3'),
+(8, 'Portátil', 'Portátil Acer', 'portatil1.jpg', '1', '3'),
+(9, 'Portátil', 'Portátil Toshiba', 'portatil2.jpg', '0', '3'),
+(10, 'Portátil', 'Portátil Windows', 'portatil3.jpg', '1', '3'),
+(11, 'Proyector', 'Proyector Asus', 'proyector.jpg', '0', '3'),
+(12, 'Sala Reuniones', 'Sala de reuniones', 'reuniones.jpg', '1', '2'),
+(13, 'Aula teoria', 'Aula teoria', 'teoria1.jpg', '0', '1'),
+(14, 'Aula teoria', 'Aula teoria', 'teoria2.jpg', '1', '1'),
+(15, 'Aula teoria', 'Aula teoria', 'teoria3.jpg', '0', '1');
 
 -- --------------------------------------------------------
 
@@ -151,7 +159,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `recurso`
 --
