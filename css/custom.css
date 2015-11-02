@@ -1,0 +1,27 @@
+.modal-open {
+   background-image:url("../img/aula1.jpg");
+  overflow: hidden;
+}
+.logo {
+  float: left;
+  margin-top: -7%;
+  padding-left: 18%;
+}
+img {
+  position: fixed;
+  vertical-align: middle;
+}
+.modal-title > img {
+  margin-left: 300px;
+  margin-top: -15px;
+  position: fixed;
+}
+.modal-body {
+  padding: 25px;
+  position: relative;
+}
+.btn-primary {
+  background-color: #B0B94F!important;
+  border-color: #B0B94F;
+  color: #fff;
+}
