@@ -42,7 +42,7 @@
 			$result_categoria = mysqli_query($con, $consulta_categoria);
 
 			?>
-			<form action="loadReg.php" method="GET">
+			<form action="resultados.php" method="GET">
 				<input id="checkbox" type="checkbox" name="estado_recurso[]" value="0">Disponible<br/><br>
 				<input id="checkbox" type="checkbox" name="estado_recurso[]" value="1">Ocupado<br/><br>
 
