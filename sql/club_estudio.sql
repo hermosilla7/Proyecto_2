@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-11-2015 a las 23:09:06
+-- Tiempo de generación: 03-11-2015 a las 09:03:15
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `club_estudio`
 --
+CREATE DATABASE IF NOT EXISTS `club_estudio` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `club_estudio`;
 
 -- --------------------------------------------------------
 
@@ -102,10 +104,10 @@ INSERT INTO `reserva` (`id_reserva`, `id_user`, `id_recurso`, `dateini`, `datefi
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `user`
+-- Estructura de tabla para la tabla `usuario`
 --
 
-CREATE TABLE IF NOT EXISTS `user` (
+CREATE TABLE IF NOT EXISTS `usuario` (
   `id_user` int(11) NOT NULL,
   `nom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `pass` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
@@ -114,14 +116,14 @@ CREATE TABLE IF NOT EXISTS `user` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Volcado de datos para la tabla `user`
+-- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `user` (`id_user`, `nom`, `pass`, `rol`, `img`) VALUES
-(1, 'user1', 'user1', 1, '1.jpg'),
-(2, 'user1', 'user1', 1, '1.jpg'),
-(3, 'user2', 'user2', 0, '2.jpg'),
-(4, 'user2', 'user2', 0, '2.jpg');
+INSERT INTO `usuario` (`id_user`, `nom`, `pass`, `rol`, `img`) VALUES
+(1, 'us_admin', 'admin123', 1, '1.jpg'),
+(2, 'us_normal_1', 'user123', 0, '1.jpg'),
+(3, 'us_normal_2', 'user456', 0, '2.jpg'),
+(4, 'us_normal_3', 'user789', 0, '2.jpg');
 
 --
 -- Índices para tablas volcadas
@@ -146,9 +148,9 @@ ALTER TABLE `reserva`
   ADD PRIMARY KEY (`id_reserva`);
 
 --
--- Indices de la tabla `user`
+-- Indices de la tabla `usuario`
 --
-ALTER TABLE `user`
+ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id_user`);
 
 --
@@ -171,9 +173,9 @@ ALTER TABLE `recurso`
 ALTER TABLE `reserva`
   MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT de la tabla `user`
+-- AUTO_INCREMENT de la tabla `usuario`
 --
-ALTER TABLE `user`
+ALTER TABLE `usuario`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
