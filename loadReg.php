@@ -1,4 +1,5 @@
 <?php
+include_once 'header.php';
 include 'conexion.php';
 
 //como la sentencia SIEMPRE va a buscar todos los registros de la tabla producto, pongo en la variable $sql esa parte de la sentencia que SI o SI, va a contener
@@ -11,7 +12,7 @@ if(!isset($_REQUEST['estado_recurso'])){
 } else {
 	$count = 0;
 	foreach ($_REQUEST['estado_recurso'] as $opcionEstado[]) {
-	$count+=1;
+	$count+=1;			
 	}
 
 	if ($count==0) {
@@ -34,7 +35,7 @@ if(!isset($_REQUEST['estado_recurso'])){
 	$sql .= " AND categoria = $categoria";
 	}
 
-	
+
 	$datos = mysqli_query($con, $sql);
 	//extraemos los productos uno a uno en la variable $anuncio que es un array
 	while($recurso = mysqli_fetch_array($datos)){
@@ -50,12 +51,17 @@ if(!isset($_REQUEST['estado_recurso'])){
 			echo "<img src='$fichero' width='80' heigth='80' ><br/><br/><br/>";
 		}
 		else{
-			echo "<img src ='img/no_disponible.jpg'/><br/><br>";
+			echo "<img src ='img/no_disponible.jpg'/>";
 		}
-
+		?>
+		<a href="reservar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
+		<?php
+		echo "<br/><br>";
 		
 	}
 }
 //cerramos la conexión con la base de datos
 mysqli_close($con);
 ?>
+
+<?php include "footer.php";
