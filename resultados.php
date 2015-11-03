@@ -1,6 +1,5 @@
 <?php
-include_once 'html_head.php';
-include_once 'cabecera.php';
+// include_once 'cabecera.php';
 include 'conexion.php';
 
 //como la sentencia SIEMPRE va a buscar todos los registros de la tabla producto, pongo en la variable $sql esa parte de la sentencia que SI o SI, va a contener
@@ -25,6 +24,15 @@ if(!isset($_REQUEST['estado_recurso'])){
 			$sql.= " OR estado=$opcionEstado[1]";
 		}
 		$sql.=")";
+	}
+
+	//DATOS MUNICIPIO
+	if(($_REQUEST['categoria'] == '')){
+		// echo "No se muestra municipio";
+	}
+	else {
+	$categoria=$_REQUEST['categoria'];
+	$sql .= " AND categoria = $categoria";
 	}
 
 	
