@@ -11,7 +11,7 @@ if(!isset($_REQUEST['estado_recurso'])){
 } else {
 	$count = 0;
 	foreach ($_REQUEST['estado_recurso'] as $opcionEstado[]) {
-	$count+=1;			
+	$count+=1;
 	}
 
 	if ($count==0) {
