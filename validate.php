@@ -12,7 +12,7 @@ $user = $_POST["user"];
 $passwd = $_POST["passwd"];
 
 // Select de la tabla donde exista ese usuario
-$result = mysql_query("SELECT * FROM usuarios WHERE nom = '$user'");
+$result = mysql_query("SELECT * FROM usuario WHERE nom = '$user'");
 
 //Validamos si el nomUsuari existe en la base de datos o es correcto
 if($row = mysql_fetch_array($result))
