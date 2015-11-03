@@ -35,7 +35,7 @@ if(!isset($_REQUEST['estado_recurso'])){
 	$sql .= " AND categoria = $categoria";
 	}
 
-	
+
 	$datos = mysqli_query($con, $sql);
 	//extraemos los productos uno a uno en la variable $anuncio que es un array
 	while($recurso = mysqli_fetch_array($datos)){
@@ -51,9 +51,12 @@ if(!isset($_REQUEST['estado_recurso'])){
 			echo "<img src='$fichero' width='80' heigth='80' ><br/><br/><br/>";
 		}
 		else{
-			echo "<img src ='img/no_disponible.jpg'/><br/><br>";
+			echo "<img src ='img/no_disponible.jpg'/>";
 		}
-
+		?>
+		<a href="reservar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
+		<?php
+		echo "<br/><br>";
 		
 	}
 }
