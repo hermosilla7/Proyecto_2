@@ -40,7 +40,7 @@ if(!isset($_REQUEST['estado_recurso'])){
 	//extraemos los productos uno a uno en la variable $anuncio que es un array
 	while($recurso = mysqli_fetch_array($datos)){
 		echo "<b>Nombre:</b>";
-		echo utf8_encode($recurso['nom']);
+		echo utf8_encode($recurso['nombre']);
 		echo "<br/>";
 		echo "<b>Contenido:</b> ";
 		echo utf8_encode($recurso['descr']);
@@ -48,7 +48,7 @@ if(!isset($_REQUEST['estado_recurso'])){
 
 		$fichero="img/$recurso[img]";
 		if(file_exists($fichero)&&(($recurso['img']) != '')){
-			echo "<img src='$fichero' width='200' heigth='200' ><br/><br/><br/>";
+			echo "<img src='$fichero' width='80' heigth='80' ><br/><br/><br/>";
 		}
 		else{
 			echo "<img src ='img/no_disponible.jpg'/><br/><br>";

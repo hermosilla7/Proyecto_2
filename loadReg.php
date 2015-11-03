@@ -1,36 +1,61 @@
 <?php
 include 'conexion.php';
 
-try{ 
+//como la sentencia SIEMPRE va a buscar todos los registros de la tabla producto, pongo en la variable $sql esa parte de la sentencia que SI o SI, va a contener
+$sql = "SELECT * FROM recurso WHERE ";
 
-	//$conn = new PDO("mysql:host=$server; dbname=$database; charset=utf8", $usuario, $pwd);
-	$conn->exec("set names utf8");
-	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//VERSION BETA
+//controlar checkbox
+if(!isset($_REQUEST['estado_recurso'])){
+	echo "Selecciona disponible u ocupado";
+} else {
+	$count = 0;
+	foreach ($_REQUEST['estado_recurso'] as $opcionEstado[]) {
+	$count+=1;			
+	}
 
-			$sql = $conn->prepare("SELECT * FROM club_estudio");
-			$sql -> execute();	
-			$resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
-			$cuenta = $sql->rowCount();
+	if ($count==0) {
+		$sql = "";
+	}
+	if ($count>0) {
+		$sql.= " (estado=$opcionEstado[0]";
+		if ($count>1){
+			$sql.= " OR estado=$opcionEstado[1]";
+		}
+		$sql.=")";
+	}
 
-			if ($cuenta!=0){
-				echo json_encode($resultado);
-			}else{
-				/*
-				echo json_encode(array(
-				"ERROR" => "No hi ha cap operació a llistar "
-				));
-				*/
-				echo json_encode($resultado);
-			}			
+	//DATOS MUNICIPIO
+	if(($_REQUEST['categoria'] == '')){
+		// echo "No se muestra municipio";
+	}
+	else {
+	$categoria=$_REQUEST['categoria'];
+	$sql .= " AND categoria = $categoria";
+	}
+
+	
+	$datos = mysqli_query($con, $sql);
+	//extraemos los productos uno a uno en la variable $anuncio que es un array
+	while($recurso = mysqli_fetch_array($datos)){
+		echo "<b>Nombre:</b>";
+		echo utf8_encode($recurso['nombre']);
+		echo "<br/>";
+		echo "<b>Contenido:</b> ";
+		echo utf8_encode($recurso['descr']);
+		echo "<br/>";
+
+		$fichero="img/$recurso[img]";
+		if(file_exists($fichero)&&(($recurso['img']) != '')){
+			echo "<img src='$fichero' width='80' heigth='80' ><br/><br/><br/>";
+		}
+		else{
+			echo "<img src ='img/no_disponible.jpg'/><br/><br>";
+		}
+
 		
-		
-}catch(PDOException $e){
-			//$ErrorTramesa++;
-			echo json_encode(array(
-				"ERROR" => $e->getMessage()."\n"
-				));
-			//$log=$log."*ERROR: " . ;
-			//$ErrorDescripcio=$ErrorDescripcio."*ERROR: " . $e->getMessage()."\n";
+	}
 }
-
+//cerramos la conexión con la base de datos
+mysqli_close($con);
 ?>

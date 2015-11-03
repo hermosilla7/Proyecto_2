@@ -60,11 +60,6 @@ textarea {
   resize: none;
 }
 
-img {
-  width: 18px;
-  height: 18px;
-}
-
 /* enable absolute positioning */
 .inner-addon { 
     position: relative; 

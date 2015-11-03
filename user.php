@@ -32,33 +32,36 @@
 		<link rel="icon" type="image/png" href="images/favicon.png" />
 	</head>
 	<body>
-		<!-- NAVBAR DE LA PÁGINA WEB -->
-		<nav class="navbar navbar-default" style="margin-top:-20px">
-		  <div class="container-fluid">
-		    <div class="navbar-header">
-		    	<a class="navbar-brand" href="">Reserva de Material</a>
-		    </div>
-		    <?php
-				//creamos la sesion
-				session_start();
-
-				$nomUsuari = $_SESSION['nom'];
-
-				//validamos si se ha hecho o no el inicio de sesion correctamente
-				//si no se ha hecho la sesion nos regresará a index.html
-				if(!isset($_SESSION['nom'])) 
-				{
-				  header('Location: index.html'); 
-				  exit();
-				}
-
-				echo "<div class='navbar-text navbar-right'>
-							<h4 style='width:280px'>BENVINGUT - $nomUsuari <a href='logout.php' style='width:20px'><img src='img/cerrarSesion.png' style='width:20px;height:20px;margin-top:8px' /></a></h4>
-					  </div>";
+		<?php
+			include_once 'conexion.php';
+			include_once 'header.php';
+			  
+			$consulta_recurso = ("SELECT * FROM recurso");
+			$consulta_categoria = ("SELECT * FROM categoria");
+			$result_recurso = mysqli_query($con, $consulta_recurso);
+			$result_categoria = mysqli_query($con, $consulta_categoria);
 
 			?>
-		  </div>
-		</nav>
+			<form action="loadReg.php" method="GET">
+				<input id="checkbox" type="checkbox" name="estado_recurso[]" value="0">Disponible<br/><br>
+				<input id="checkbox" type="checkbox" name="estado_recurso[]" value="1">Ocupado<br/><br>
+
+			   	<!-- Categoria -->
+				<select id="categoria" name="categoria">
+						<option value="">Seleccionar categoría</option>
+						<?php
+						while($fila=mysqli_fetch_array($result_categoria)){
+							echo utf8_encode("<option value=\"$fila[id]\">$fila[nombre]</option>");
+						}
+			        	?>
+			    </select><br/><br>
+
+					<input id="boton" type="submit" value="Enviar">
+					<input id="boton" type="reset" value="Cancelar">
+					<input id="boton" type="button" onclick="alert('Rellena los campos necesarios')" value="?">
+			</form>
+		
+
 
 		<!-- VENTANA MODAL QUE APARECERÁ CUANDO SE ESCRIBA LA MEJORA -->
 		<div class="modal fade" id="helloModal">
@@ -79,15 +82,15 @@
 		
 		<div class="container" style="margin-top:10px">
 			<!-- FORMULARIO PRINCIPAL DE DONDE OBTENDRÁ LOS DATOS LA TABLA -->
-			<form id="frmMillora" name="frmMillora" role="form" action="updateReg.php">
+			<!-- <form id="frmMillora" name="frmMillora" role="form" action="updateReg.php">
 				<div class="form-group">
 					<?php
 						echo "<input name='usuari' id='usuari' type='text' class='form-control' data-bv-field='usuari' value='$nomUsuari' style='display:none' />"
 	            	?>
-	            </div>
+	            </div> -->
 
 	            <!-- PARTE DONDE SE ENCUENTRA EL TITULO, AREA Y DESCRIPCION DE LA MEJORA -->
-				<div class="row" style="width:100%;margin-top:20px">
+				<!-- <div class="row" style="width:100%;margin-top:20px">
 				    <h1 style="margin-left:15px">Possibles millores</h1>
 					<div class="col-md-20" style="margin-left:20px">
 			            <div class="panel panel-default">
@@ -115,10 +118,10 @@
 			                </div>
 			            </div>
 		            </div>             
-			    </div>
+			    </div> -->
 
 			    <!-- PARTES OCULTAS PARA QUE LEA UN VALOR EN LA BASE DE DATOS -->
-			    <div class="form-group" style="display:none;">
+			    <!-- <div class="form-group" style="display:none;">
 			        <label >Puntuació</label>
 			        <div class="col-xs-10">
 			            <input id="puntuacio" name="puntuacio" type="number" />
@@ -147,11 +150,11 @@
 						</select>
 			        </div>
 			    </div>
-			</form>
+			</form> -->
 
 
 			<!-- FORMULARIO ESTRUCTURADO PARA QUE APAREZCA EN LA VENTANA MODAL -->
-			<form id="frmModal" class="form-horizontal" style="display: none;" role="form" action="updateModal_admin.php">
+			<!-- <form id="frmModal" class="form-horizontal" style="display: none;" role="form" action="updateModal_admin.php">
 				<div class="form-group" style="display: none;">
 			        <label class="col-xs-2 control-label">ID_Millora</label>
 			        <div class="col-xs-10">
@@ -216,10 +219,10 @@
 						</select>
 			        </div>
 			    </div>
-			</form>
+			</form> -->
 
 			<!-- TITULO Y PRINCIPIO DE LA TABLA BOOTSTRAP -->
-    		<h1>Millores proposades pels usuaris</h1>
+    		<!-- <h1>Millores proposades pels usuaris</h1> -->
 			<table id="tablaJS" data-toolbar="#custom-toolbar"></table>
 		</div>
 
@@ -246,24 +249,24 @@
 			         minimumCountColumns: 2,
 			         clickToSelect: false,
 			         columns: [{
-			             field: 'titol',
-			             title: 'Títol de la millora',
+			             field: 'nombre',
+			             title: 'Nombre del recurso',
 			             align: 'left',
 			             valign: 'middle',
 			             sortable: true
 			         }, {
-			             field: 'autor',
-			             title: 'Autor',
+			             field: 'contenido',
+			             title: 'Descripción',
 			             align: 'center',
 			             valign: 'middle',
 			             sortable: true
 			         }, {
-			             field: 'area',
-			             title: 'Àrea',
+			             field: 'imagen',
+			             title: 'Imágen',
 			             align: 'center',
 			             valign: 'middle',
 			             sortable: true
-			         }, {
+			         }/*, {
 			         	 field: 'prioritat',
 			         	 title: 'Prioritat',
 			         	 align: 'center',
@@ -282,7 +285,7 @@
 			             valign: 'middle',
 						 sortable: true,
 						 formatter: starFormatter
-			         }]
+			         }*/]
 		       	 }).on('click-row.bs.table', function (e, row, $element) {
 				         //alert('Event: click-row.bs.table, data: ' + JSON.stringify(row));
 						
@@ -490,46 +493,6 @@
 			
 		</script>
 
-		<!-- PUNTUACION EN FORMA DE ESTRELLA -->
-		<script>
-			$('#puntuacio').rating();
-			$('#puntuacio2').rating();
-		</script>
-
-		<!-- PONER ESTRELLAS EN TABLA BOOTSTRAP -->
-		<script>
-
-			function starFormatter(mitjana){
-
-				if ((mitjana >= 0) && (mitjana < 0.3)){
-					return "<img src='images/vacia.png' alt='estrella buida' /><img src='images/vacia.png' alt='estrella buida' /><img src='images/vacia.png' alt='estrella buida' /><img src='images/vacia.png' alt='estrella buida' /><img src='images/vacia.png' alt='estrella buida' />";
-				} else if ((mitjana == null) && (mitjana < 0.3)){
-					return "<img src='images/vacia.png' alt='estrella buida' /><img src='images/vacia.png' alt='estrella buida' /><img src='images/vacia.png' alt='estrella buida' /><img src='images/vacia.png' alt='estrella buida' /><img src='images/vacia.png' alt='estrella buida' />";
-				} else if ((mitjana >= 0.3) && (mitjana < 0.7)){
-					return "<img src='images/media.png' alt='mitja estrella' /><img src='images/vacia.png' alt='estrella buida' /><img src='images/vacia.png' alt='estrella buida' /><img src='images/vacia.png' alt='estrella buida' /><img src='images/vacia.png' alt='estrella buida' />";
-				} else if ((mitjana >= 0.7) && (mitjana < 1.3)){
-					return "<img src='images/llena.png' alt='estrella plena' /><img src='images/vacia.png' alt='estrella buida' /><img src='images/vacia.png' alt='estrella buida' /><img src='images/vacia.png' alt='estrella buida' /><img src='images/vacia.png' alt='estrella buida' />";
-				} else if ((mitjana >= 1.3) && (mitjana < 1.7)){
-					return "<img src='images/llena.png' alt='estrella plena' /><img src='images/media.png' alt='mitja estrella' /><img src='images/vacia.png' alt='estrella buida' /><img src='images/vacia.png' alt='estrella buida' /><img src='images/vacia.png' alt='estrella buida' />";
-				} else if ((mitjana >= 1.7) && (mitjana < 2.3)){
-					return "<img src='images/llena.png' alt='estrella plena' /><img src='images/llena.png' alt='estrella plena' /><img src='images/vacia.png' alt='estrella buida' /><img src='images/vacia.png' alt='estrella buida' /><img src='images/vacia.png' alt='estrella buida' />";
-				} else if ((mitjana >= 2.3) && (mitjana < 2.7)){
-					return "<img src='images/llena.png' alt='estrella plena' /><img src='images/llena.png' alt='estrella plena' /><img src='images/media.png' alt='mitja estrella' /><img src='images/vacia.png' alt='estrella buida' /><img src='images/vacia.png' alt='estrella buida' />";
-				} else if ((mitjana >= 2.7) && (mitjana < 3.3)){
-					return "<img src='images/llena.png' alt='estrella plena' /><img src='images/llena.png' alt='estrella plena' /><img src='images/llena.png' alt='estrella plena' /><img src='images/vacia.png' alt='estrella buida' /><img src='images/vacia.png' alt='estrella buida' />";
-				} else if ((mitjana >= 3.3) && (mitjana < 3.7)){
-					return "<img src='images/llena.png' alt='estrella plena' /><img src='images/llena.png' alt='estrella plena' /><img src='images/llena.png' alt='estrella plena' /><img src='images/media.png' alt='mitja estrella' /><img src='images/vacia.png' alt='estrella buida' />";
-				} else if ((mitjana >= 3.7) && (mitjana < 4.3)){
-					return "<img src='images/llena.png' alt='estrella plena' /><img src='images/llena.png' alt='estrella plena' /><img src='images/llena.png' alt='estrella plena' /><img src='images/llena.png' alt='estrella plena' /><img src='images/vacia.png' alt='estrella buida' />";
-				} else if ((mitjana >= 4.3) && (mitjana < 4.7)){
-					return "<img src='images/llena.png' alt='estrella plena' /><img src='images/llena.png' alt='estrella plena' /><img src='images/llena.png' alt='estrella plena' /><img src='images/llena.png' alt='estrella plena' /><img src='images/media.png' alt='mitja estrella' />";
-				} else {
-					return "<img src='images/llena.png' alt='estrella plena' /><img src='images/llena.png' alt='estrella plena' /><img src='images/llena.png' alt='estrella plena' /><img src='images/llena.png' alt='estrella plena' /><img src='images/llena.png' alt='estrella plena' />";
-				}
-
-			};
-
-		</script>
-
-	</body>
-</html>
+<?php  
+	include "footer.php";
+?>
