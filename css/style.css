@@ -1,0 +1,87 @@
+@charset "UTF-8"; 
+
+@media (min-width: 800px){
+	.container {
+		width: 800px;
+	}
+}
+ 
+body {
+  padding-top: 20px;
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+  cursor: default; 
+  background-color: #fff; 
+  resize: none;
+}
+
+#loading {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  display: block;
+  opacity: 0.5;
+  background-color: #fff;
+  z-index: 99;
+  text-align: center;
+  display:none;
+}
+
+#loading-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  width:48px;
+  height:48px;
+}
+
+.nombre{
+  width: 10%;
+  height: auto;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  border: 2px solid #005cb9;
+  margin-left: 70%;
+  margin-top: -30px;
+  border-radius: 5px;
+}
+
+.nombreuser{
+  text-align: justify;
+}
+
+textarea {
+  resize: none;
+}
+
+img {
+  width: 18px;
+  height: 18px;
+}
+
+/* enable absolute positioning */
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
