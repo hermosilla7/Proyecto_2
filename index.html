@@ -22,46 +22,50 @@
         <link rel="icon" type="image/png" href="img/favicon.png" />
     </head>
     <body>
-    <form method="post" action="validate.php" id="loginForm" name="loginForm">
-        <div class="modal fade" id="loginModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Iniciar Sessión  <img src="img/logo.png" width="144" height="70"></h4>
+        <form method="post" action="validate.php" id="loginForm" name="loginForm">
+            <div class="modal fade" id="loginModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Iniciar Sessión  <img src="img/logo.png" width="144" height="70"></h4>
 
-                    </div>
-                    
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label class="control-label col-sm-3" for="user">Nombre de usuario:</label>
-                            <div class="col-sm-7">          
-                                <input type="text" class="form-control" id="user" name="user" placeholder="Introduce tu usuario" />
-                            </div>
-                        </div><br /><br />
-                        <div class="form-group">
-                            <label class="control-label col-sm-3" for="passwd">Contraseña:</label>
-                            <div class="col-sm-7">          
-                                <input type="password" class="form-control" id="passwd" name="passwd" placeholder="Introduce la contraseña" />
-                            </div>
-                        </div><br /><br />
-                    </div>
+                        </div>
+                        
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label class="control-label col-sm-3" for="user">Nombre de usuario:</label>
+                                <div class="col-sm-7">          
+                                    <input type="text" class="form-control" id="user" name="user" placeholder="Introduce tu usuario" />
+                                </div>
+                            </div><br /><br />
+                            <div class="form-group">
+                                <label class="control-label col-sm-3" for="passwd">Contraseña:</label>
+                                <div class="col-sm-7">          
+                                    <input type="password" class="form-control" id="passwd" name="passwd" placeholder="Introduce la contraseña" />
+                                </div>
+                            </div><br /><br />
+                        </div>
 
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" id="iniciarSesion">Inicia!</button>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary" id="iniciarSesion">Inicia!</button>
+                        </div>
                     </div>
                 </div>
+                <div class="logo">
+                    <div class="logo1"><img src="img/logo1.png" width="384" height="400"></div>
+                    <div class="logo2"><img src="img/logo2.png" width="424" height="280"></div>
+                </div>
             </div>
-              <div class="logo">
-             <div class="logo1"><img src="img/logo1.png" width="384" height="400"></div>
-             <div class="logo2"><img src="img/logo2.png" width="424" height="280"></div>
-         </div>
-        </div>
         </form>
 
 
         <script>  
             $(window).load(function(){
-                $('#loginModal').modal('show');
+                $('#loginModal').modal({
+                    show: true,
+                    backdrop: 'static',
+                    keyboard: false
+                });
             });
         </script>
 
