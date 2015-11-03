@@ -1,17 +1,4 @@
 
-<<<<<<< HEAD
-<footer>
-	<div>
-		Copyright 2003-2015 _ Desarrollador 
-	</div>
-	<div>
-		Club_Estudio
-	</div>
-	<div>
-
-	</div>
-</footer>
-=======
 	<footer class="footer-center">
 
 
@@ -32,4 +19,3 @@
 
 			</div>
 	</footer>
->>>>>>> 79efc7d15ca2dfc3907bfc492d32e4fc7b014622
