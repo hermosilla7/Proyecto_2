@@ -1,5 +1,5 @@
 <?php
-// include_once 'cabecera.php';
+include_once 'header.php';
 include 'conexion.php';
 
 //como la sentencia SIEMPRE va a buscar todos los registros de la tabla producto, pongo en la variable $sql esa parte de la sentencia que SI o SI, va a contener

@@ -1,6 +1,6 @@
 <?php
 include_once 'conexion.php';
-// include_once 'cabecera.php';
+include_once 'header.php';
   
 $consulta_recurso = ("SELECT * FROM recurso");
 $consulta_categoria = ("SELECT * FROM categoria");
