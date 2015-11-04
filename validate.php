@@ -24,6 +24,7 @@ if($row = mysql_fetch_array($result))
     session_start();  
     //Almacenamos el nombre de usuario en una variable de sesión usuario
     $_SESSION['nom'] = $user;
+    $_SESSION['id_user'] = $row["id_user"] ;
       if($row['rol'] == 1){
         //Redireccionamos a la pagina: admin.php
         header("Location: admin.php");  

@@ -23,10 +23,6 @@
     <link rel="stylesheet" href="css/bootstrap-select.min.css">
     <script type="text/javascript" src="js/bootstrap-select.min.js"></script>
 
-    <!-- BOOTSTRAP STAR RATING -->
-    <link rel="stylesheet" href="css/star-rating.min.css">
-    <script type="text/javascript" src="js/star-rating.min.js"></script>
-
     <!-- VALIDATION -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.css"></link>
     <script type="text/javascript" src="js/bootstrapValidator.js"></script>

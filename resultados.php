@@ -22,10 +22,17 @@
 			echo "</div><br/>";
 			echo "<div class='botonera'>
 
-	                        <button type='submit' class='btn btn-success' id='reservar'>Reservar</button>
-	                        <button type='submit' class='btn btn-primary' id='liberar'>Liberar</button>
+	                        <input type='button' class='btn btn-success' id='reservar' value='Reservar' />
+	                        <input type='button' class='btn btn-primary' id='liberar' value='Liberar' />
 	                        
 	                    </div>";
+?>
+	<script>
+		$('#reservar').on('click',function(){
+			location.href="reservar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>";
+		})
+	</script>
+<?php
 			$fichero="img/$recurso[img]";
 			if(file_exists($fichero)&&(($recurso['img']) != '')){
 				echo "<div class='contimg'><img src='$fichero' width='250' heigth='250' ></div>";
@@ -35,7 +42,8 @@
 			}
 			
 			echo"</div>";
-			?>
+			?>           	
+	        <a href="reservar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
 
 			<?php
 			echo "<br/><br>";
@@ -84,6 +92,8 @@
 	                        <button type='submit' class='btn btn-primary' id='liberar'>Liberar</button>
 	                        
 	                    </div>";
+
+
 			$fichero="img/$recurso[img]";
 			if(file_exists($fichero)&&(($recurso['img']) != '')){
 				echo "<div class='contimg'><img src='$fichero' width='250' heigth='250' ></div>";
@@ -93,7 +103,9 @@
 			}
 			
 			echo"</div>";
-			?>
+			
+			?>           	
+	        <a href="reservar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
 
 			<?php
 			echo "<br/><br>";
