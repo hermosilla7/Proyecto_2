@@ -111,14 +111,7 @@ body {
   margin-top: -90px;
   max-width: 255px;
 }
-.contendor {
-  background: #fff none repeat scroll 0 0;
-  border: 1px solid;
-  border-radius: 5px;
-  margin-left: 26%;
-  max-width: 800px;
-  padding: 10px;
-}
+
 img {
   border-radius: 5px;
 }
@@ -153,14 +146,29 @@ img {
   float: right !important;
   margin-right: -116%;
 }
-.btns {
-  margin-left: 55%;
-  margin-top: -5%;
-  width: 191px;
-}
 .panel-body {
   border: 1px solid;
   border-radius: 5px;
   padding: 15px;
   height: 70px;
+}
+.contendor {
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid;
+  border-radius: 5px;
+  margin-left: 22%;
+  max-width: 800px;
+  padding: 10px;
+}
+.form-inline .radio, .form-inline .checkbox {
+  display:table-cell;
+  margin-bottom:0;
+  margin-top:0;
+  vertical-align:middle;
+  width:165px;
+}
+.btns {
+  margin-left: 64%;
+  margin-top: -5%;
+  width: 191px;
 }

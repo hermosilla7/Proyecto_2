@@ -57,7 +57,6 @@
 				</div>
 				
 			   	<!-- Categoria -->
-				<br/><br>
 					
 			</form>
 							</div>
