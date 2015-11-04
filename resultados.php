@@ -40,67 +40,29 @@
 		$datos = mysqli_query($con, $sql);
 		//extraemos los productos uno a uno en la variable $anuncio que es un array
 		while($recurso = mysqli_fetch_array($datos)){
-			echo "<b>Nombre:</b>";
+			echo "<div class='contendor'>";
+			echo"<div class='textseccion'><b>Nombre:</b>";
 			echo utf8_encode($recurso['nombre']);
 			echo "<br/>";
 			echo "<b>Contenido:</b> ";
 			echo utf8_encode($recurso['descr']);
-			echo "<br/>";
+			echo "</div><br/>";
+			echo "<div class='botonera'>
 
+	                        <button type='submit' class='btn btn-success' id='reservar'>Reservar</button>
+	                        <button type='submit' class='btn btn-primary' id='liberar'>Liberar</button>
+	                        
+	                    </div>";
 			$fichero="img/$recurso[img]";
 			if(file_exists($fichero)&&(($recurso['img']) != '')){
-				echo "<img src='$fichero' width='80' heigth='80' ><br/><br/><br/>";
+				echo "<div class='contimg'><img src='$fichero' width='250' heigth='250' ></div>";
 			}
 			else{
-				echo "<img src ='img/no_disponible.jpg'/>";
+				echo "<div class='contimg'><img src ='img/no_disponible.jpg'width='250' heigth='250'/></div>";
 			}
+			
+			echo"</div>";
 			?>
-			<a href="reservar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
-
-
-			<button type="button" class="btn btn-primary" id="botonOpciones" data-toggle="modal" data-target="#modalOpciones">Opciones</button>
-			<div class="modal fade" id="modalOpciones">
-	            <div class="modal-dialog">
-	                <div class="modal-content">
-	                    <div class="modal-header">
-	                        <h4 class="modal-title">Reserva del recurso</h4>
-	                    </div>
-	                    
-	                    <div class="modal-body">
-	                        <div class="form-group">
-	                            <label class="control-label col-sm-3" for="user">Nombre del recurso:</label>
-	                            <div class="col-sm-7">          
-	                                <input type="text" class="form-control" id="nombre" name="nombre" readonly />
-	                            </div>
-	                        </div><br /><br />
-	                        <div class="form-group">
-	                            <label class="control-label col-sm-3" for="passwd">Tipo de recurso:</label>
-	                            <div class="col-sm-7">          
-	                                <input type="text" class="form-control" id="tipo" name="tipo" value="hola" readonly />
-	                            </div>
-	                        </div><br /><br />
-	                    </div>
-
-	                    <div class="modal-footer">
-	                        <button type="submit" class="btn btn-success" id="reservar">Reservar</button>
-	                        <button type="submit" class="btn btn-primary" id="liberar">Liberar</button>
-	                        <button type="submit" class="btn btn-danger" id="cancelar" onclick="cerrar()">Salir</button>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-
-	        <script>
-	        	$('#modalOpciones').modal({
-	        		show: false,
-	        		backdrop: 'static',
-	        		keyboard: false,
-	        	})
-
-	        	function cerrar(){
-	        		$('#modalOpciones').modal('hide');
-	        	}
-	        </script>
 
 			<?php
 			echo "<br/><br>";

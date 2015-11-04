@@ -25,7 +25,7 @@
 		?>
 		<div class="container" style="margin-top:10px">
 			<div class="row " style="width:75%;margin-top:20px">
-				<h1 style="margin-left:15px">Possibles millores</h1>
+				<h1 style="margin-left:15px">Filtar Resultados</h1>
 				<div class="col-md-20" style="margin-left:20px">
 					<div class="panel panel-default">
 						<div class="panel-body">
@@ -39,21 +39,26 @@
 					<label class="checkbox-inline">
 						<input id="checkbox" type="checkbox" name="estado_recurso[]" value="1">Ocupado
 					</label>
-				</div>
-				
-			   	<!-- Categoria -->
-				<select class="btn btn-default pull-right" id="categoria" name="categoria">
+					<select class="btn btn-default pull-right" id="categoria" name="categoria">
 						<option value="">Seleccionar categoría</option>
 						<?php
 						while($fila=mysqli_fetch_array($result_categoria)){
 							echo utf8_encode("<option value=\"$fila[id]\">$fila[nombre]</option>");
 						}
 			        	?>
-			    </select><br/><br>
 
+			    </select>
+
+				</div>
+				<div class="btns">
 					<input class="btn btn-primary" id="botonEnviar" type="submit" value="Enviar">
 					<input class="btn btn-danger" id="botonCancelar" type="reset" value="Cancelar">
 					<input class="btn btn-success" id="botonAyuda" type="button" value="?">
+				</div>
+				
+			   	<!-- Categoria -->
+				<br/><br>
+					
 			</form>
 							</div>
 						</div>

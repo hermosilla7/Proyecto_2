@@ -96,3 +96,71 @@ body {
 .th-inner.sortable {
   background: #fff none repeat scroll 0 0;
 }
+/* cambios de user.php maquetación css  */
+.contendor {
+  margin-left: 30%;
+  max-width: 800px;
+}
+.botonera {
+  margin-left: 260px;
+}
+.textseccion {
+  margin-left: 260px;
+}
+.contimg {
+  margin-top: -90px;
+  max-width: 255px;
+}
+.contendor {
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid;
+  border-radius: 5px;
+  margin-left: 26%;
+  max-width: 800px;
+  padding: 10px;
+}
+img {
+  border-radius: 5px;
+}
+.panel {
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+  width: 800px;
+}
+.form-group {
+  margin-bottom: 15px;
+  margin-left: 10%;
+}
+.panel-body {
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 15px;
+}
+.btns {
+  width: 191px;
+}
+.form-inline .radio, .form-inline .checkbox {
+  display: inline-block;
+  margin-bottom: 0;
+  margin-top: 0;
+  vertical-align: middle;
+  width: 165px;
+}
+.pull-right {
+  float: right !important;
+  margin-right: -116%;
+}
+.btns {
+  margin-left: 55%;
+  margin-top: -5%;
+  width: 191px;
+}
+.panel-body {
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 15px;
+  height: 70px;
+}
