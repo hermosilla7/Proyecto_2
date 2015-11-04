@@ -111,26 +111,11 @@ body {
   margin-top: -90px;
   max-width: 255px;
 }
-
-img {
-  border-radius: 5px;
-}
-.panel {
-  background-color: #fff;
-  border: 8px solid #fff;
-  border-radius: 4px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  margin-bottom: 20px;
-  width: 800px;
-}
 .form-group {
   margin-bottom: 15px;
   margin-left: 10%;
 }
 
-.btns {
-  width: 191px;
-}
 .form-inline .radio, .form-inline .checkbox {
   display: inline-block;
   margin-bottom: 0;
@@ -141,6 +126,31 @@ img {
 .pull-right {
   float: right !important;
   margin-right: -116%;
+}
+.form-inline .radio, .form-inline .checkbox {
+  display:table-cell;
+  margin-bottom:0;
+  margin-top:0;
+  vertical-align:middle;
+  width:165px;
+}
+.btns {
+  margin-left: 64%;
+  margin-top: -5%;
+  width: 191px;
+}
+/* cambios de user.php apliacion estilos css  */
+img {
+  border-radius: 5px;
+}
+.panel {
+  background-color: #fff;
+  border: 8px solid #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+  margin-left: -63px;
+  width: 800px;
 }
 .panel-body {
   background: rgba(0, 0, 0, 0) linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 38%, rgba(207, 202, 180, 1) 100%) repeat scroll 0 0;
