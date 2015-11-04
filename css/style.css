@@ -101,9 +101,7 @@ body {
   margin-left: 30%;
   max-width: 800px;
 }
-.botonera {
-  margin-left: 260px;
-}
+
 .textseccion {
   margin-left: 260px;
 }
@@ -179,4 +177,16 @@ img {
   margin-left: 64%;
   margin-top: -5%;
   width: 191px;
+}
+.contimg {
+  margin-top: -60px;
+  max-width: 255px;
+}
+.botonera {
+  margin-top: 21%;
+  float: right;
+}
+.textseccion {
+  font-size: larger;
+  margin-left: 260px;
 }
