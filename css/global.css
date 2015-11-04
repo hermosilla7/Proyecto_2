@@ -15,20 +15,14 @@ height: auto;
 
  
 .navigation a {
-  text-decoration: none;
-  text-align: center;
+  border-radius: 5px;
   color: #fff;
   display: block;
-  transition: .3s background-color;
+  margin-left: 2px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease 0s;
 }
-
-.navigation .navList:hover {
-  background-color: #005f5f;
-}
-.navigation .navLogout:hover {
-  background-color: #dd2f2f;
-}
-
 
 .navigation li {
   font-family: 'Oswald', sans-serif;
@@ -40,14 +34,23 @@ height: auto;
   font-size: 1.4em;
   
 }
- 
+.navigation img {
+  margin-left: -85px;
+} 
 
 .navigation li {
   display: inline-block;
   margin-right: -4px;
 }
 
-
+.navigation .navList:hover {
+  background-color: #b0b94f;
+  border-radius: 5px;
+}
+.navigation .navLogout:hover {
+  background-color: #dd2f2f;
+  border-radius: 5px;
+}
 
 
 /*Footer*/

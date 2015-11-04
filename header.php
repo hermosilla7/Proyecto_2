@@ -35,8 +35,9 @@
 <body>
   <header>
   <nav class="navigation">
+
         <ul>
-          <li><a href="" class="navList">Inicio</a></li>
+          <img src ='img/logo.png'width='250' heigth='250'/>
           <li><a href="busqueda_reservas.php" class="navList">Reservas</a></li>
           <li><a href="incidencias.php" class="navList">Incidencias</a></li>
           <li><a href="" class="navList">Nav4</a></li>
