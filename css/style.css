@@ -117,7 +117,7 @@ img {
 }
 .panel {
   background-color: #fff;
-  border: 1px solid transparent;
+  border: 8px solid #fff;
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   margin-bottom: 20px;
@@ -127,11 +127,7 @@ img {
   margin-bottom: 15px;
   margin-left: 10%;
 }
-.panel-body {
-  border: 1px solid;
-  border-radius: 5px;
-  padding: 15px;
-}
+
 .btns {
   width: 191px;
 }
@@ -147,14 +143,16 @@ img {
   margin-right: -116%;
 }
 .panel-body {
-  border: 1px solid;
+  background: rgba(0, 0, 0, 0) linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 38%, rgba(207, 202, 180, 1) 100%) repeat scroll 0 0;
+  
   border-radius: 5px;
   padding: 15px;
   height: 70px;
 }
+
 .contendor {
-  background: #fff none repeat scroll 0 0;
-  border: 1px solid;
+  background: rgba(0, 0, 0, 0) linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 38%, rgba(207, 202, 180, 1) 100%) repeat scroll 0 0;
+  border: 8px solid #fff;
   border-radius: 5px;
   margin-left: 22%;
   max-width: 800px;
