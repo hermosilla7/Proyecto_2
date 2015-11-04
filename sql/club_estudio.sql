@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.12
+-- version 4.4.14
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-11-2015 a las 10:51:28
--- Versión del servidor: 5.6.25
--- Versión de PHP: 5.6.11
+-- Tiempo de generación: 04-11-2015 a las 13:36:29
+-- Versión del servidor: 5.6.26
+-- Versión de PHP: 5.6.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -54,8 +54,28 @@ CREATE TABLE IF NOT EXISTS `incidencia` (
   `titulo` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   `descripcion` longtext COLLATE utf8_unicode_ci NOT NULL,
   `id_recurso` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `id_usuario` int(11) NOT NULL,
+  `fecha` date NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `incidencia`
+--
+
+INSERT INTO `incidencia` (`id_incidencia`, `titulo`, `descripcion`, `id_recurso`, `id_usuario`, `fecha`) VALUES
+(1, '', '', 0, 2, '2015-11-04'),
+(2, '', '', 0, 2, '2015-11-04'),
+(3, '', '', 0, 2, '2015-11-04'),
+(4, '', '', 0, 2, '2015-11-04'),
+(5, '', '', 0, 2, '2015-11-04'),
+(6, '', '', 0, 2, '2015-11-04'),
+(7, '', '', 0, 2, '2015-11-04'),
+(8, '', '', 8, 2, '2015-11-04'),
+(9, '', '', 8, 2, '2015-11-04'),
+(10, '', '', 1, 2, '2015-11-04'),
+(11, '', '', 1, 2, '2015-11-04'),
+(12, 'dfdsf', 'gdfgh', 0, 2, '2015-11-04'),
+(13, 'dsfds', 'tuyg', 1, 2, '2015-11-04');
 
 -- --------------------------------------------------------
 
@@ -105,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `reserva` (
   `id_recurso` int(11) NOT NULL,
   `dateini` date NOT NULL,
   `datefi` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `reserva`
@@ -116,7 +136,8 @@ INSERT INTO `reserva` (`id_reserva`, `id_user`, `id_recurso`, `dateini`, `datefi
 (2, 1, 1, '2015-11-03', '2015-11-03'),
 (3, 2, 3, '2015-11-03', '0000-00-00'),
 (4, 2, 6, '2015-11-03', '0000-00-00'),
-(5, 2, 7, '2015-11-03', '0000-00-00');
+(5, 2, 7, '2015-11-03', '0000-00-00'),
+(6, 2, 5, '2015-11-04', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -189,7 +210,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `incidencia`
 --
 ALTER TABLE `incidencia`
-  MODIFY `id_incidencia` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_incidencia` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT de la tabla `recurso`
 --
@@ -199,7 +220,7 @@ ALTER TABLE `recurso`
 -- AUTO_INCREMENT de la tabla `reserva`
 --
 ALTER TABLE `reserva`
-  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
