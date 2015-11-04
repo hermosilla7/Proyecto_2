@@ -9,7 +9,7 @@
 				
 				<a href="#">Inicio</a>
 				·
-				<a href="#">Contacto</a>
+				<a href="mailto:info@club.estudio.com">Contacto</a>
 
 			</p>
 
