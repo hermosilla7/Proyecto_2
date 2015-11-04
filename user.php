@@ -55,30 +55,44 @@
 			  exit();
 			}
 		?>
-		<form action="resultados.php" method="GET">
-			<div class="checkbox">
-				<label class="checkbox-inline">
-					<input id="checkbox" type="checkbox" name="estado_recurso[]" value="0">Disponible
-				</label>
-				<label class="checkbox-inline">
-					<input id="checkbox" type="checkbox" name="estado_recurso[]" value="1">Ocupado
-				</label>
-			</div>
-			
-		   	<!-- Categoria -->
-			<select class="btn btn-default" id="categoria" name="categoria">
-					<option value="">Seleccionar categoría</option>
-					<?php
-					while($fila=mysqli_fetch_array($result_categoria)){
-						echo utf8_encode("<option value=\"$fila[id]\">$fila[nombre]</option>");
-					}
-		        	?>
-		    </select><br/><br>
+		<div class="container" style="margin-top:10px">
+			<div class="row " style="width:75%;margin-top:20px">
+				<h1 style="margin-left:15px">Possibles millores</h1>
+				<div class="col-md-20" style="margin-left:20px">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="form-inline form-group">
 
-				<input class="btn btn-default" id="botonEnviar" type="submit" value="Enviar">
-				<input class="btn btn-danger" id="botonCancelar" type="reset" value="Cancelar">
-				<input class="btn btn-success" id="botonAyuda" type="button" value="?">
-		</form>
+			<form action="resultados.php" method="GET">
+				<div class="checkbox">
+					<label class="checkbox-inline">
+						<input id="checkbox" type="checkbox" name="estado_recurso[]" value="0" checked>Disponible
+					</label>
+					<label class="checkbox-inline">
+						<input id="checkbox" type="checkbox" name="estado_recurso[]" value="1" checked>Ocupado
+					</label>
+				</div>
+				
+			   	<!-- Categoria -->
+				<select class="btn btn-default pull-right" id="categoria" name="categoria">
+						<option value="">Seleccionar categoría</option>
+						<?php
+						while($fila=mysqli_fetch_array($result_categoria)){
+							echo utf8_encode("<option value=\"$fila[id]\">$fila[nombre]</option>");
+						}
+			        	?>
+			    </select><br/><br>
+
+					<input class="btn btn-primary" id="botonEnviar" type="submit" value="Enviar">
+					<input class="btn btn-danger" id="botonCancelar" type="reset" value="Cancelar">
+					<input class="btn btn-success" id="botonAyuda" type="button" value="?">
+			</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<script type="text/javascript">
 			$('#botonAyuda').popover({

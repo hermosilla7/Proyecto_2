@@ -41,7 +41,7 @@
   <nav class="navigation">
         <ul>
           <li><a href="" class="navList">Inicio</a></li>
-          <li><a href="busqueda_reservas.php" class="navList">Reservas</a></li>
+          <li><a href="historial_reservas.php" class="navList">Reservas</a></li>
           <li><a href="" class="navList">Nav3</a></li>
           <li><a href="" class="navList">Nav4</a></li>
           <li><a href="logout.php" class="navLogout">Salir</a></li>

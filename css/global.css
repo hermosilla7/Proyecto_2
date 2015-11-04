@@ -22,7 +22,7 @@ height: auto;
   transition: .3s background-color;
 }
 
-.navigation .navlist:hover {
+.navigation .navList:hover {
   background-color: #005f5f;
 }
 .navigation .navLogout:hover {
