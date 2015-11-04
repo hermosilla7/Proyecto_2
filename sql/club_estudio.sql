@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.14
+-- version 4.4.12
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-11-2015 a las 09:03:15
--- Versión del servidor: 5.6.26
--- Versión de PHP: 5.6.12
+-- Tiempo de generación: 04-11-2015 a las 10:51:28
+-- Versión del servidor: 5.6.25
+-- Versión de PHP: 5.6.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -46,6 +46,20 @@ INSERT INTO `categoria` (`id`, `nombre`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `incidencia`
+--
+
+CREATE TABLE IF NOT EXISTS `incidencia` (
+  `id_incidencia` int(11) NOT NULL,
+  `titulo` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `descripcion` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `id_recurso` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `recurso`
 --
 
@@ -65,11 +79,11 @@ CREATE TABLE IF NOT EXISTS `recurso` (
 INSERT INTO `recurso` (`id_recurso`, `nombre`, `descr`, `img`, `estado`, `categoria`) VALUES
 (1, 'Carro portátiles', 'Carro de 25 portátiles', 'carro.jpg', '1', '3'),
 (2, 'Despacho', 'Despacho para entrevistas', 'despacho1.jpg', '1', '2'),
-(3, 'Despacho', 'Despacho con mesa redonda', 'despacho2.jpg', '0', '2'),
+(3, 'Despacho', 'Despacho con mesa redonda', 'despacho2.jpg', '1', '2'),
 (4, 'Aula informática', 'Aula de informática norte', 'informatica1.jpg', '1', '1'),
 (5, 'Aula informática', 'Aula de informática sur', 'informatica2.jpg', '1', '1'),
-(6, 'Móvil', 'Móvil multimedia', 'movil1.jpg', '0', '3'),
-(7, 'Móvil', 'Móvil multimedia', 'movil2.jpg', '0', '3'),
+(6, 'Móvil', 'Móvil multimedia', 'movil1.jpg', '1', '3'),
+(7, 'Móvil', 'Móvil multimedia', 'movil2.jpg', '1', '3'),
 (8, 'Portátil', 'Portátil Acer', 'portatil1.jpg', '1', '3'),
 (9, 'Portátil', 'Portátil Toshiba', 'portatil2.jpg', '0', '3'),
 (10, 'Portátil', 'Portátil Windows', 'portatil3.jpg', '1', '3'),
@@ -91,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `reserva` (
   `id_recurso` int(11) NOT NULL,
   `dateini` date NOT NULL,
   `datefi` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `reserva`
@@ -99,7 +113,10 @@ CREATE TABLE IF NOT EXISTS `reserva` (
 
 INSERT INTO `reserva` (`id_reserva`, `id_user`, `id_recurso`, `dateini`, `datefi`) VALUES
 (1, 1, 1, '2015-11-03', '2015-11-03'),
-(2, 1, 1, '2015-11-03', '2015-11-03');
+(2, 1, 1, '2015-11-03', '2015-11-03'),
+(3, 2, 3, '2015-11-03', '0000-00-00'),
+(4, 2, 6, '2015-11-03', '0000-00-00'),
+(5, 2, 7, '2015-11-03', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -136,6 +153,12 @@ ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `incidencia`
+--
+ALTER TABLE `incidencia`
+  ADD PRIMARY KEY (`id_incidencia`);
+
+--
 -- Indices de la tabla `recurso`
 --
 ALTER TABLE `recurso`
@@ -163,6 +186,11 @@ ALTER TABLE `usuario`
 ALTER TABLE `categoria`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
+-- AUTO_INCREMENT de la tabla `incidencia`
+--
+ALTER TABLE `incidencia`
+  MODIFY `id_incidencia` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT de la tabla `recurso`
 --
 ALTER TABLE `recurso`
@@ -171,7 +199,7 @@ ALTER TABLE `recurso`
 -- AUTO_INCREMENT de la tabla `reserva`
 --
 ALTER TABLE `reserva`
-  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
