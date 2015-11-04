@@ -9,7 +9,38 @@
 	//VERSION BETA
 	//controlar checkbox
 	if(!isset($_REQUEST['estado_recurso'])){
-		echo "Selecciona disponible u ocupado";
+		$sql = "SELECT * FROM recurso";
+		$datos = mysqli_query($con, $sql);
+		//extraemos los productos uno a uno en la variable $anuncio que es un array
+		while($recurso = mysqli_fetch_array($datos)){
+			echo "<div class='contendor'>";
+			echo"<div class='textseccion'><b>Nombre:</b>";
+			echo utf8_encode($recurso['nombre']);
+			echo "<br/>";
+			echo "<b>Contenido:</b> ";
+			echo utf8_encode($recurso['descr']);
+			echo "</div><br/>";
+			echo "<div class='botonera'>
+
+	                        <button type='submit' class='btn btn-success' id='reservar'>Reservar</button>
+	                        <button type='submit' class='btn btn-primary' id='liberar'>Liberar</button>
+	                        
+	                    </div>";
+			$fichero="img/$recurso[img]";
+			if(file_exists($fichero)&&(($recurso['img']) != '')){
+				echo "<div class='contimg'><img src='$fichero' width='250' heigth='250' ></div>";
+			}
+			else{
+				echo "<div class='contimg'><img src ='img/no_disponible.jpg'width='250' heigth='250'/></div>";
+			}
+			
+			echo"</div>";
+			?>
+
+			<?php
+			echo "<br/><br>";
+			
+		}
 	} else {
 		$count = 0;
 		foreach ($_REQUEST['estado_recurso'] as $opcionEstado[]) {
