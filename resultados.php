@@ -1,5 +1,5 @@
 <?php
-	function mostrarConsulta (){
+function mostrarConsulta (){
 	include 'conexion.php';
 
 
@@ -22,17 +22,12 @@
 			echo "</div><br/>";
 			echo "<div class='botonera'>
 
-	                        <input type='button' class='btn btn-success' id='reservar' value='Reservar' />
-	                        <input type='button' class='btn btn-primary' id='liberar' value='Liberar' />
+	                        <input type='button' class='btn btn-success' id='reservar' value='Reservar' onclick='reservar()' />
+	                        <input type='button' class='btn btn-primary' id='liberar' value='Liberar' onclick='liberar()' />
 	                        
-	                    </div>";
-?>
-	<script>
-		$('#reservar').on('click',function(){
-			location.href="reservar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>";
-		})
-	</script>
-<?php
+	              </div>";
+
+
 			$fichero="img/$recurso[img]";
 			if(file_exists($fichero)&&(($recurso['img']) != '')){
 				echo "<div class='contimg'><img src='$fichero' width='250' heigth='250' ></div>";
@@ -42,10 +37,10 @@
 			}
 			
 			echo"</div>";
-			?>           	
+?>           	
 	        <a href="reservar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
 
-			<?php
+<?php
 			echo "<br/><br>";
 			
 		}
@@ -88,8 +83,8 @@
 			echo "</div><br/>";
 			echo "<div class='botonera'>
 
-	                        <button type='submit' class='btn btn-success' id='reservar'>Reservar</button>
-	                        <button type='submit' class='btn btn-primary' id='liberar'>Liberar</button>
+	                        <button type='button' class='btn btn-success' id='reservar' onclick='reservar()' >Reservar</button>
+	                        <button type='button' class='btn btn-primary' id='liberar' onclick='reservar()' >Liberar</button>
 	                        
 	                    </div>";
 
@@ -104,14 +99,27 @@
 			
 			echo"</div>";
 			
-			?>           	
+?>           	
 	        <a href="reservar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
 
-			<?php
+<?php
 			echo "<br/><br>";
 			
+			//$idRecurso="$recurso['id_recurso']";
 		}
 	}
+
+?>
+
+	<script>
+		function reservar(){
+			location.href = "reservar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>";
+			// var idRecurso = "<php echo $idRecurso ?>";
+			//location.href = "reservar.php?id_recurso=<?php"+idRecurso+";?>" ;
+		};
+	</script>
+
+<?php
 	//cerramos la conexión con la base de datos
 	mysqli_close($con);
 }

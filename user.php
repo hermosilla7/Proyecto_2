@@ -31,34 +31,31 @@
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<div class="form-inline form-group">
+								<form action="user.php" method="GET">
+									<div class="checkbox">
+										<label class="checkbox-inline">
+											<input id="checkbox" type="checkbox" name="estado_recurso[]" value="0">Disponible
+										</label>
+										<label class="checkbox-inline">
+											<input id="checkbox" type="checkbox" name="estado_recurso[]" value="1">Ocupado
+										</label>
+										<select class="btn btn-default pull-right" id="categoria" name="categoria">
+											<option value="">Seleccionar categoría</option>
+											<?php
+											while($fila=mysqli_fetch_array($result_categoria)){
+												echo utf8_encode("<option value=\"$fila[id]\">$fila[nombre]</option>");
+											}
+								        	?>
 
-			<form action="user.php" method="GET">
-				<div class="checkbox">
-					<label class="checkbox-inline">
-						<input id="checkbox" type="checkbox" name="estado_recurso[]" value="0">Disponible
-					</label>
-					<label class="checkbox-inline">
-						<input id="checkbox" type="checkbox" name="estado_recurso[]" value="1">Ocupado
-					</label>
-					<select class="btn btn-default pull-right" id="categoria" name="categoria">
-						<option value="">Seleccionar categoría</option>
-						<?php
-						while($fila=mysqli_fetch_array($result_categoria)){
-							echo utf8_encode("<option value=\"$fila[id]\">$fila[nombre]</option>");
-						}
-			        	?>
+								    </select>
 
-			    </select>
-
-				</div>
-				<div class="btns">
-					<input class="btn btn-primary" id="botonEnviar" type="submit" value="Enviar">
-					<input class="btn btn-danger" id="botonCancelar" type="reset" value="Cancelar">
-					<input class="btn btn-success" id="botonAyuda" type="button" value="?">
-				</div>
-
-					
-			</form>
+									</div>
+									<div class="btns">
+										<button class="btn btn-success" id="botonEnviar" type="submit">Enviar</button>
+										<button class="btn btn-danger" id="botonCancelar" type="reset">Cancelar</button>
+										<button class="btn btn-info" id="botonAyuda" type="button">?</button>
+									</div>	
+								</form>
 							</div>
 						</div>
 					</div>
@@ -78,8 +75,6 @@
 				content: 'Rellena los campos necesarios',
 				placement: 'right'
 			});
-
-			
 		</script>
 		
 

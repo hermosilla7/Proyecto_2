@@ -9,24 +9,68 @@ $consulta_recursos = ("SELECT * FROM recurso");
 $result_recursos = mysqli_query($con, $consulta_recursos);
 
 ?>
-	<form action="incidencias_insert.php" method="GET">
-	Título:
-	<input type="text" name="titulo" id="titulo"><br>
-	Descripción:
-	<input type="text" name="descripcion" id="descripcion"><br>
 
-   	<!-- Recurso -->
-	<select id="recurso" name="recurso">
-			<option value="">Seleccionar recurso</option>
-			<?php
-			while($fila=mysqli_fetch_array($result_recursos)){
-				echo utf8_encode("<option value=\"$fila[id_recurso]\">$fila[nombre]</option>");
-			}
-        	?>
-    </select><br/><br>
+		<div class="container" style="margin-top:10px">
+			<!-- FORMULARIO PRINCIPAL DE DONDE OBTENDRÁ LOS DATOS LA TABLA -->
+			<form id="frmIncidencia" name="frmIncidencia" role="form" action="updateReg.php">
 
-		<input id="boton" type="submit" value="Enviar">
-		<input id="boton" type="reset" value="Cancelar">
-		<input id="boton" type="button" onclick="alert('Rellena los campos necesarios')" value="?">
+	            <!-- PARTE DONDE SE ENCUENTRA EL TITULO, AREA Y DESCRIPCION DE LA MEJORA -->
+				<div class="row" style="width:100%;margin-top:20px">
+				    <h1 style="margin-left:15px">Formulario de incidencias</h1>
+					<div class="col-md-20" style="margin-left:20px">
+			            <div class="panel panel-default">
+			                <div class="panel-body"> 
+			                	<div class="form-inline form-group"> 
+				                	<input name="titulo" id="titulo" type="text" class="form-control" placeholder="Titulo de la incidencia" maxlength="50" size="60" />
+				                	<select class="btn btn-default" id="recurso" name="recurso">
+										<option value="">Seleccionar recurso</option>
+										<?php
+										while($fila=mysqli_fetch_array($result_recursos)){
+											echo utf8_encode("<option value=\"$fila[id_recurso]\">$fila[nombre]</option>");
+										}
+							        	?>
+								    </select>
+			                	</div>
+				                <div class="form-group">
+				                	<textarea class="form-control counted" name="descripcion" id="descripcion" placeholder="Descripción" rows="5" style="margin-bottom:10px;width:100%"></textarea>
+			                	</div>
+			                	<h6 class="pull-left" id="counter">500 caràcters encara</h6>
+		            			<button class="btn btn-flat btn-primary pull-right" id="enviar" name="enviar" type="submit">Envia</button>
+			                </div>
+			            </div>
+		            </div>             
+			    </div>
+			</form>
+		</div>
+
+	<!--<form action="incidencias_insert.php" method="GET">
+
+		Descripción:
+		<input type="text" name="descripcion" id="descripcion"><br>-->
+
+	   	<!-- Recurso -->
+		<!--<select class="btn btn-default" id="recurso" name="recurso">
+				<option value="">Seleccionar recurso</option>
+				<?php
+				while($fila=mysqli_fetch_array($result_recursos)){
+					echo utf8_encode("<option value=\"$fila[id_recurso]\">$fila[nombre]</option>");
+				}
+	        	?>
+	    </select><br/><br>
+
+		<button class="btn btn-success" id="botonEnviar" type="submit">Enviar</button>
+		<button class="btn btn-danger" id="botonReset" type="reset">Cancelar</button>
+		<button class="btn btn-info" id="botonAyuda" type="button">?</button>
 	</form>
-<?php  include "footer.php";
+
+	<script type="text/javascript">
+		$('#botonAyuda').popover({
+			title: 'Ayuda',
+			content: 'Rellena los campos necesarios',
+			placement: 'right'
+		});
+	</script>-->
+
+<?php  
+	include 'footer.php';
+?>
