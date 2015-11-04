@@ -1,6 +1,6 @@
 <?php
+	function mostrarConsulta (){
 	include 'conexion.php';
-	include_once 'header.php';
 
 
 	//como la sentencia SIEMPRE va a buscar todos los registros de la tabla producto, pongo en la variable $sql esa parte de la sentencia que SI o SI, va a contener
@@ -109,8 +109,5 @@
 	}
 	//cerramos la conexión con la base de datos
 	mysqli_close($con);
-
-
-	include "footer.php";
-
+}
 ?>
