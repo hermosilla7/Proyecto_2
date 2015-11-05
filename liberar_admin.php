@@ -8,12 +8,12 @@
 
 	$fecha = date('Y-m-d');
 
-	$sql_update="update recurso set estado = 2 where id_recurso = $_REQUEST[id_recurso]";
-	echo $sql_update;
+	$sql_update="update recurso set estado = 0 where id_recurso = $_REQUEST[id_recurso]";
 
 	$sql_insert="insert into reserva(id_user, id_recurso, dateini) values 
 		                       ('$user_id','$_REQUEST[id_recurso]', '$fecha')";
-		                       echo $sql_insert;
+
+		                       
 		mysqli_query($con,$sql_insert)
 		  or die("Problemas en el select".mysqli_error($con));
 

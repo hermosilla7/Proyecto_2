@@ -23,10 +23,10 @@ function mostrarConsultaAdmin (){
 			echo "<div class='botonera'>";
 ?> 
 				<div class="btn btn-primary" id="btnLiberar" name="btnLiberar">
-                	<a href="liberar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Liberar</a>
+                	<a href="liberar_admin.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Liberar</a>
                 </div>
 	            <div class="btn btn-success">       	
-   					<a href="reparar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">En reparación</a>
+   					<a href="reparar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reparar</a>
 				</div>
 <?php                 
 	            echo"  </div>";
@@ -84,10 +84,10 @@ function mostrarConsultaAdmin (){
 			echo "<div class='botonera'>";
 ?> 
 	            <div class="btn btn-primary" id="btnLiberar" name="btnLiberar">
-                	<a href="liberar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Liberar</a>
+                	<a href="liberar_admin.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Liberar</a>
                 </div>
 	            <div class="btn btn-success">          	
-					<a href="reparar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">En reparación</a>
+					<a href="reparar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reparar</a>
 				</div>
 <?php   
             echo"</div>";
