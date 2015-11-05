@@ -93,7 +93,6 @@
 				<button id="botonAyuda" class="btn btn-info" type="button">?</button>
 		</form>
 
-		<div>
 			<?php
 				mostrarReservas();
 			?>

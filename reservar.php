@@ -5,7 +5,7 @@
 	session_start();
 	$user_id = $_SESSION['id_user'];
 
-	$fecha = date('Y-m-d');
+	$fecha = date("Y-m-d H:i:s");
 
 	$sql_update="update recurso set estado = 1 where id_recurso = $_REQUEST[id_recurso]";
 
