@@ -25,5 +25,6 @@
 		echo "Anunci donat d'alta";
 
 	include "footer.php";
+	
 ?>
  
