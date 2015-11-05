@@ -22,10 +22,13 @@ function mostrarConsulta (){
 			echo "</div><br/>";
 			echo "<div class='botonera'>
 
-	                        <input type='button' class='btn btn-success' id='reservar' value='Reservar' onclick='reservar()' />
-	                        <input type='button' class='btn btn-primary' id='liberar' value='Liberar' onclick='liberar()' />
-	                        
-	              </div>";
+	                        <input type='button' class='btn btn-primary' id='liberar' value='Liberar' onclick='liberar()' />";
+	           ?> 
+	                     <div class="btn btn-success"          	
+	       				 <a href="reservar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
+						</div>
+				<?php                 
+	            echo"  </div>";
 
 
 			$fichero="img/$recurso[img]";
@@ -37,10 +40,6 @@ function mostrarConsulta (){
 			}
 			
 			echo"</div>";
-?>           	
-	        <a href="reservar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
-
-<?php
 			echo "<br/><br>";
 			
 		}
@@ -82,11 +81,13 @@ function mostrarConsulta (){
 			echo utf8_encode($recurso['descr']);
 			echo "</div><br/>";
 			echo "<div class='botonera'>
-
-	                        <button type='button' class='btn btn-success' id='reservar' onclick='reservar()' >Reservar</button>
-	                        <button type='button' class='btn btn-primary' id='liberar' onclick='reservar()' >Liberar</button>
-	                        
-	                    </div>";
+	                        <button type='button' class='btn btn-primary' id='liberar' onclick='reservar()' >Liberar</button>";
+	                     ?> 
+	                     <div class="btn btn-success"          	
+	        <a href="reservar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
+</div>
+<?php   
+	                    echo"</div>";
 
 
 			$fichero="img/$recurso[img]";
@@ -99,10 +100,6 @@ function mostrarConsulta (){
 			
 			echo"</div>";
 			
-?>           	
-	        <a href="reservar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
-
-<?php
 			echo "<br/><br>";
 			
 			//$idRecurso="$recurso['id_recurso']";
