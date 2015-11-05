@@ -1,5 +1,4 @@
 <?php
-	include_once 'header.php';
 	include 'conexion.php';
 
 	//creamos la sesion
@@ -18,5 +17,5 @@
 
 		echo "Incidencia dada de alta";
 
-		include "footer.php";
+	header("Location: incidencias.php");
 ?>

@@ -1,6 +1,6 @@
 <?php
+function mostrarReservasAdmin(){
 	include 'conexion.php';
-	include_once 'header_admin.php';
 
 
 	//como la sentencia SIEMPRE va a buscar todos los registros de la tabla producto, pongo en la variable $sql_reserva esa parte de la sentencia que SI o SI, va a contener
@@ -41,8 +41,7 @@
 
 		}
 
-	include "footer.php";
 
 	mysqli_close($con);
-
+}
 ?>

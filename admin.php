@@ -2,7 +2,7 @@
 		<?php
 			include_once 'conexion.php';
 			include_once 'header_admin.php';
-			include 'resultados.php';
+			include 'resultados_admin.php';
 			  
 			$consulta_recurso = ("SELECT * FROM recurso");
 			$consulta_categoria = ("SELECT * FROM categoria");
@@ -31,7 +31,7 @@
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<div class="form-inline form-group">
-								<form action="user.php" method="GET">
+								<form action="admin.php" method="GET">
 									<div class="checkbox">
 										<label class="checkbox-inline">
 											<input id="checkbox" type="checkbox" name="estado_recurso[]" value="0">Disponible
@@ -65,7 +65,7 @@
 
 		<div>
 			<?php
-				mostrarConsulta();
+				mostrarConsultaAdmin();
 			?>
 		</div>
 

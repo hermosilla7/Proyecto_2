@@ -1,5 +1,5 @@
 <?php
-function mostrarConsulta (){
+function mostrarConsultaAdmin (){
 	include 'conexion.php';
 
 
@@ -22,14 +22,14 @@ function mostrarConsulta (){
 			echo "</div><br/>";
 			echo "<div class='botonera'>";
 ?> 
-                <div class="btn btn-primary" id="btnLiberar" name="btnLiberar">
+				<div class="btn btn-primary" id="btnLiberar" name="btnLiberar">
                 	<a href="liberar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Liberar</a>
-                </div> 
-                <div class="btn btn-success" id="btnReservar" name="btnReservar">          	
-    				<a href="reservar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
+                </div>
+	            <div class="btn btn-success">       	
+   					<a href="reparar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">En reparación</a>
 				</div>
 <?php                 
-            echo"  </div>";
+	            echo"  </div>";
 
 
 			$fichero="img/$recurso[img]";
@@ -42,29 +42,6 @@ function mostrarConsulta (){
 			
 			echo"</div>";
 			echo "<br/><br>";
-
-			if ($recurso["estado"] == "0"){
-				echo 	"<script>
-					        $(document).ready(function() {
-								$(document.getElementsByName('btnLiberar')).attr('disabled', true);
-								$(document.getElementsByName('btnReservar')).attr('disabled', false);
-							});
-					    </script>";
-			}else if ($recurso["estado"] == "1"){
-				echo 	"<script>
-					        $(document).ready(function() {
-								$(document.getElementsByName('btnLiberar')).attr('disabled', false);
-								$(document.getElementsByName('btnReservar')).attr('disabled', true);
-							});
-					    </script>";
-			} else {
-				echo 	"<script>
-					        $(document).ready(function() {
-								$(document.getElementsByName('btnLiberar')).attr('disabled', true);
-								$(document.getElementsByName('btnReservar')).attr('disabled', true);
-							});
-					    </script>";
-			}
 			
 		}
 	} else {
@@ -105,15 +82,15 @@ function mostrarConsulta (){
 			echo utf8_encode($recurso['descr']);
 			echo "</div><br/>";
 			echo "<div class='botonera'>";
-?>
-                <div class="btn btn-primary" id="btnLiberar" name="btnLiberar">
+?> 
+	            <div class="btn btn-primary" id="btnLiberar" name="btnLiberar">
                 	<a href="liberar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Liberar</a>
-                </div> 
-                <div class="btn btn-success" id="btnReservar" name="btnReservar">          	
-    				<a href="reservar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
+                </div>
+	            <div class="btn btn-success">          	
+					<a href="reparar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">En reparación</a>
 				</div>
 <?php   
-	        echo"</div>";
+            echo"</div>";
 
 
 			$fichero="img/$recurso[img]";
@@ -127,32 +104,11 @@ function mostrarConsulta (){
 			echo"</div>";
 			
 			echo "<br/><br>";
-
-			if ($recurso["estado"] == "0"){
-				echo 	"<script>
-					        $(document).ready(function() {
-								$(document.getElementsByName('btnLiberar')).attr('disabled', true);
-								$(document.getElementsByName('btnReservar')).attr('disabled', false);
-							});
-					    </script>";
-			}else if ($recurso["estado"] == "1"){
-				echo 	"<script>
-					        $(document).ready(function() {
-								$(document.getElementsByName('btnLiberar')).attr('disabled', false);
-								$(document.getElementsByName('btnReservar')).attr('disabled', true);
-							});
-					    </script>";
-			} else {
-				echo 	"<script>
-					        $(document).ready(function() {
-								$(document.getElementsByName('btnLiberar')).attr('disabled', true);
-								$(document.getElementsByName('btnReservar')).attr('disabled', true);
-							});
-					    </script>";
-			}
-
+			
 		}
 	}
+
+
 
 	//cerramos la conexión con la base de datos
 	mysqli_close($con);

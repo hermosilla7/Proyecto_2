@@ -8,7 +8,7 @@
 
 	$fecha = date('Y-m-d');
 
-	$sql_update="update recurso set estado = 1 where id_recurso = $_REQUEST[id_recurso]";
+	$sql_update="update recurso set estado = 2 where id_recurso = $_REQUEST[id_recurso]";
 	echo $sql_update;
 
 	$sql_insert="insert into reserva(id_user, id_recurso, dateini) values 

@@ -1,12 +1,26 @@
 <?php
-include_once 'conexion.php';
-include_once 'header.php';
-include 'resultados_reservas.php';
-  
-$consulta_recurso = ("SELECT * FROM recurso");
-$consulta_categoria = ("SELECT * FROM categoria");
-$result_recurso = mysqli_query($con, $consulta_recurso);
-$result_categoria = mysqli_query($con, $consulta_categoria);
+	include_once 'conexion.php';
+	include_once 'header.php';
+	include 'resultados_reservas.php';
+
+	//creamos la sesion
+	session_start();
+
+	$nomUsuari = $_SESSION['nom'];
+	$user_id = $_SESSION['id_user'];
+
+	//validamos si se ha hecho o no el inicio de sesion correctamente
+	//si no se ha hecho la sesion nos regresará a index.html
+	if(!isset($_SESSION['nom'])) 
+	{
+	  header('Location: index.html'); 
+	  exit();
+	}
+	  
+	$consulta_recurso = ("SELECT * FROM recurso");
+	$consulta_categoria = ("SELECT * FROM categoria");
+	$result_recurso = mysqli_query($con, $consulta_recurso);
+	$result_categoria = mysqli_query($con, $consulta_categoria);
 
 ?>
 	<p class="divEric">
