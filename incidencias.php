@@ -11,12 +11,13 @@ $result_recursos = mysqli_query($con, $consulta_recursos);
 ?>
 
 		<div class="container" style="margin-top:10px">
-			<!-- FORMULARIO PRINCIPAL DE DONDE OBTENDRÁ LOS DATOS LA TABLA -->
+			<div class="incidencias"><!-- FORMULARIO PRINCIPAL DE DONDE OBTENDRÁ LOS DATOS LA TABLA -->
 			<form id="frmIncidencia" name="frmIncidencia" role="form" action="updateReg.php">
 
 	            <!-- PARTE DONDE SE ENCUENTRA EL TITULO, AREA Y DESCRIPCION DE LA MEJORA -->
 				<div class="row" style="width:100%;margin-top:20px">
 				    <h1 style="margin-left:15px">Formulario de incidencias</h1>
+				    
 					<div class="col-md-20" style="margin-left:20px">
 			            <div class="panel panel-default">
 			                <div class="panel-body"> 
@@ -35,10 +36,11 @@ $result_recursos = mysqli_query($con, $consulta_recursos);
 				                	<textarea class="form-control counted" name="descripcion" id="descripcion" placeholder="Descripción" rows="5" style="margin-bottom:10px;width:100%"></textarea>
 			                	</div>
 			                	<h6 class="pull-left" id="counter">500 caràcters encara</h6>
-		            			<button class="btn btn-flat btn-primary pull-right" id="enviar" name="enviar" type="submit">Envia</button>
+		            			<button class="btn btn-flat btn-primary pull-right2" id="enviar" name="enviar" type="submit">Envia</button>
 			                </div>
 			            </div>
-		            </div>             
+		            </div>  
+		            </div>           
 			    </div>
 			</form>
 		</div>

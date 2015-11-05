@@ -125,6 +125,10 @@ body {
   float: right !important;
   margin-right: -116%;
 }
+.pull-right2 {
+  float: right !important;
+  margin-right: 0%;
+}
 .form-inline .radio, .form-inline .checkbox {
   display:table-cell;
   margin-bottom:0;
@@ -204,4 +208,16 @@ a:hover, a:focus {
 }
 #id{
   float: right;
+}
+textarea {
+  margin-left: -48px;
+  margin-top: 5%;
+  width: 700px !important;
+}
+.incidencias {
+  background: rgba(0, 0, 0, 0) linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 38%, rgba(207, 202, 180, 1) 100%) repeat scroll 0 0;
+  border-radius: 5px;
+  padding-bottom: 10px;
+  padding-left: 62px;
+  width: 810px;
 }
