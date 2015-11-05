@@ -1,9 +1,10 @@
 <?php
+function mostrarReservas () {
 	include 'conexion.php';
-	include_once 'header.php';
 
 
 	//como la sentencia SIEMPRE va a buscar todos los registros de la tabla producto, pongo en la variable $sql_reserva esa parte de la sentencia que SI o SI, va a contener
+	// $sql_default = "SELECT * FROM reserva";
 	$sql_reserva = "SELECT * FROM reserva WHERE ";
 
 	$recurso=$_REQUEST['recurso'];
@@ -41,8 +42,6 @@
 
 		}
 
-	include "footer.php";
-
 	mysqli_close($con);
-
+}
 ?>

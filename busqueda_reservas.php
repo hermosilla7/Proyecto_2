@@ -1,6 +1,7 @@
 <?php
 include_once 'conexion.php';
 include_once 'header.php';
+include 'resultados_reservas.php';
   
 $consulta_recurso = ("SELECT * FROM recurso");
 $consulta_categoria = ("SELECT * FROM categoria");
@@ -9,7 +10,7 @@ $result_categoria = mysqli_query($con, $consulta_categoria);
 
 ?>
 	<p class="divEric">
-		<form action="resultados_reservas.php" method="GET">
+		<form action="busqueda_reservas.php" method="GET">
 
 			<script type="text/javascript">
 						<?php
@@ -77,6 +78,12 @@ $result_categoria = mysqli_query($con, $consulta_categoria);
 				<button id="botonReset" class="btn btn-danger" type="reset">Cancelar</button>
 				<button id="botonAyuda" class="btn btn-info" type="button">?</button>
 		</form>
+
+		<div>
+			<?php
+				mostrarReservas();
+			?>
+		</div>
 	</p>
 	<script type="text/javascript">
 		$('#botonAyuda').popover({
