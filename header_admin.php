@@ -38,8 +38,9 @@
 
         <ul>
           <img src ='img/logo.png'width='250' heigth='250'/>
-          <li><a href="busqueda_reservas.php" class="navList">Reservas</a></li>
-          <li><a href="incidencias.php" class="navList">Incidencias</a></li>
+          <li><a href="busqueda_reservas_admin.php" class="navList">Reservas</a></li>
+          <li><a href="incidencias_admin.php" class="navList">Incidencias</a></li>
+          <li><a href="historial_incidencias_admin.php" class="navList">SAT</a></li>
           <li><a href="logout.php" class="navLogout">Salir</a></li>
 
         </ul>
