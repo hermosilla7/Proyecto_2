@@ -9,7 +9,7 @@ $result_categoria = mysqli_query($con, $consulta_categoria);
 
 ?>
 	<p class="divEric">
-		<form action="resultados_reservas.php" method="GET">
+		<form action="resultados_reservas_admin.php" method="GET">
 
 			<script type="text/javascript">
 						<?php
