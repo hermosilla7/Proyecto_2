@@ -190,3 +190,18 @@ img {
   font-size: larger;
   margin-left: 260px;
 }
+a {
+  color: #fff;
+  text-decoration: none;
+}
+a :hover{
+  color: #fff;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  color: #fff;
+  text-decoration: none;
+}
+#id{
+  float: right;
+}
