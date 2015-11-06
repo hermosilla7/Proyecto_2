@@ -41,26 +41,26 @@
             <li><a href="incidencias.php" class="navList">Incidencias</a></li>
             <li><a href="logout.php" class="navLogout">Salir</a></li>
             <li>
-            <?php
-              //creamos la sesion
-              session_start();
+              <?php
+                //creamos la sesion
+                session_start();
 
-              $nomUsuari = $_SESSION['nom'];
-              $user_id = $_SESSION['id_user']; 
+                $nomUsuari = $_SESSION['nom'];
+                $user_id = $_SESSION['id_user']; 
 
-              //validamos si se ha hecho o no el inicio de sesion correctamente
-              //si no se ha hecho la sesion nos regresará a index.html
-              if(!isset($_SESSION['nom'])) 
-              {
-                header('Location: index.html'); 
-                exit();
-              }
-              echo "<div>
-                    <h4 style='color:white' 'width:280px'>BENVINGUT - $nomUsuari </h4>
-                    </div>";
+                //validamos si se ha hecho o no el inicio de sesion correctamente
+                //si no se ha hecho la sesion nos regresará a index.html
+                if(!isset($_SESSION['nom'])) 
+                {
+                  header('Location: index.html'); 
+                  exit();
+                }
+                echo "<div>
+                      <h4 style='color:white' 'width:280px'>BENVINGUT - $nomUsuari </h4>
+                      </div>";
 
-              ?>
-          </li>
+                ?>
+            </li>
           </ul>
     </nav>
     </header>
