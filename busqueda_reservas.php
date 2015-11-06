@@ -23,7 +23,12 @@
 	$result_categoria = mysqli_query($con, $consulta_categoria);
 
 ?>
-	<p class="divEric">
+<div class="container" style="margin-top:10px">
+<div class="row " style="width:75%;margin-top:20px">
+<div class="col-md-20" style="margin-left:20px">
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="form-inline form-group">
 		<form action="busqueda_reservas.php" method="GET">
 
 			<script type="text/javascript">
@@ -73,6 +78,7 @@
 
 
 			<!-- Categoria -->
+			<div class="recurs">
 			<select class="btn btn-default" id="categoria_tipo_select" name="categoria"  onchange="updateRecursosSelect(this.value)">
 					<option value="0">Seleccionar categoría</option>
 					<?php
@@ -80,23 +86,31 @@
 						echo utf8_encode("<option value=\"$fila[id]\">$fila[nombre]</option>");
 					}
 		        	?>
-		    </select><br/><br>
+		    </select>
+			<!-- Recurso -->
+<select class="btn btn-default" id="recurso" name="recurso" disabled="disabled">
+		    </select>
 
-
-
-		    <!-- Recurso -->
-			<select class="btn btn-default" id="recurso" name="recurso" disabled="disabled">
-		    </select><br/><br>
-
+		    </div>
+			
+			<div class="btns">
 				<button id="botonEnviar" class="btn btn-success" type="submit">Enviar</button>
 				<button id="botonReset" class="btn btn-danger" type="reset">Cancelar</button>
 				<button id="botonAyuda" class="btn btn-info" type="button">?</button>
+			</div>
 		</form>
+	</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 			<?php
 				mostrarReservas();
 			?>
 		</div>
+
 	</p>
 	<script type="text/javascript">
 		$('#botonAyuda').popover({

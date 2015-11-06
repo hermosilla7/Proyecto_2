@@ -22,8 +22,8 @@ function mostrarReservas () {
 				$datos_usuario = mysqli_query($con, $sql_usuario);
 				$recurso = mysqli_fetch_array($datos_recurso);
 				$usuario = mysqli_fetch_array($datos_usuario);
-
-				echo "<b>Usuario:</b>";
+				echo "<div class='contendor2'>";
+				echo "<div class='textseccion2'><b>Usuario:</b>";
 				echo utf8_encode($usuario['nom']);
 				echo "<br/>";
 				echo "<b>Recurso:</b> ";
@@ -34,7 +34,7 @@ function mostrarReservas () {
 				echo "<br/>";
 				echo "<b>Fecha fin:</b> ";
 				echo utf8_encode($reserva['datefi']);
-				echo "<br><br/>";
+				echo "<br></div></div><br/>";
 			}
 		}
 		else{
@@ -47,8 +47,8 @@ function mostrarReservas () {
 					$datos_usuario = mysqli_query($con, $sql_usuario);
 					$recurso = mysqli_fetch_array($datos_recurso);
 					$usuario = mysqli_fetch_array($datos_usuario);
-
-					echo "<b>Usuario:</b>";
+					echo "<div class='contendor2'>";
+					echo "<div class='textseccion2'><b>Usuario:</b>";
 					echo utf8_encode($usuario['nom']);
 					echo "<br/>";
 					echo "<b>Recurso:</b> ";
@@ -59,7 +59,7 @@ function mostrarReservas () {
 					echo "<br/>";
 					echo "<b>Fecha fin:</b> ";
 					echo utf8_encode($reserva['datefi']);
-					echo "<br><br/>";
+					echo "<br></div></div><br/>";
 	}
 }
 
