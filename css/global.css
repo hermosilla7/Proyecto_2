@@ -104,4 +104,14 @@ height: auto;
   padding: 0;
   text-align: center;
 }
+.hov {
+  display: initial;
+  max-width: 50px;
+  opacity: 0.5;
+}
+.hov:hover {
+  display: initial;
+  max-width: 50px;
+  opacity: 1;
+}
   /**/
