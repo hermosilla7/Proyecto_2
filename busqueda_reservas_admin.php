@@ -13,7 +13,11 @@
 	$result_categoria = mysqli_query($con, $consulta_categoria);
 
 ?>
-	<p class="divEric">
+	<div class="container" style="margin-top:10px">
+<div class="row " style="width:75%;margin-top:20px">
+<div class="col-md-20" style="margin-left:20px">
+<div class="panel panel-default">
+	<div class="panel-body">
 		<form action="busqueda_reservas_admin.php" method="GET">
 
 			<script type="text/javascript">
@@ -60,8 +64,7 @@
 				}	
 
 			</script>
-
-
+			<div class="recurs">
 			<!-- Categoria -->
 			<select class="btn btn-default" id="categoria_tipo_select" name="categoria"  onchange="updateRecursosSelect(this.value)">
 					<option value="0">Seleccionar categoría</option>
@@ -70,18 +73,24 @@
 						echo utf8_encode("<option value=\"$fila[id]\">$fila[nombre]</option>");
 					}
 		        	?>
-		    </select><br/><br>
-
-
+		    </select>
 
 		    <!-- Recurso -->
 			<select class="btn btn-default" id="recurso" name="recurso" disabled="disabled">
-		    </select><br/><br>
-
+		    </select>
+		</div>
+			<div class="btns">
 				<button id="botonEnviar" class="btn btn-success" type="submit">Enviar</button>
 				<button id="botonReset" class="btn btn-danger" type="reset">Cancelar</button>
 				<button id="botonAyuda" class="btn btn-info" type="button">?</button>
+			</div>
 		</form>
+		</div>
+</div>
+</div>
+</div>
+</div>
+
 		<div>
 			<?php
 				mostrarReservasAdmin();

@@ -22,8 +22,8 @@ function mostrarReservasAdmin(){
 				$datos_usuario = mysqli_query($con, $sql_usuario);
 				$recurso = mysqli_fetch_array($datos_recurso);
 				$usuario = mysqli_fetch_array($datos_usuario);
-
-				echo "<b>Usuario:</b>";
+				echo "<div class='contendor2'>";
+				echo "<div class='textseccion2'><b>Usuario:</b>";
 				echo utf8_encode($usuario['nom']);
 				echo "<br/>";
 				echo "<b>Recurso:</b> ";
@@ -34,7 +34,20 @@ function mostrarReservasAdmin(){
 				echo "<br/>";
 				echo "<b>Fecha fin:</b> ";
 				echo utf8_encode($reserva['datefi']);
-				echo "<br><br/>";
+				echo "<br></div><br/>";
+
+				$fichero="img/$recurso[img]";
+				if(file_exists($fichero)&&(($recurso['img']) != '')){
+					echo "<div class='contimg'><img src='$fichero' width='250' heigth='250' ></div>";
+				}
+				else{
+					echo "<div class='contimg'><img src ='img/no_disponible.jpg'width='250' heigth='250'/></div>";
+				}
+			
+			echo "</div>";
+			echo"</div>";
+
+			echo "<br>";
 			}
 		}
 		else{
@@ -47,8 +60,8 @@ function mostrarReservasAdmin(){
 					$datos_usuario = mysqli_query($con, $sql_usuario);
 					$recurso = mysqli_fetch_array($datos_recurso);
 					$usuario = mysqli_fetch_array($datos_usuario);
-
-					echo "<b>Usuario:</b>";
+					echo "<div class='contendor2'>";
+					echo "<div class='textseccion2'><b>Usuario:</b>";
 					echo utf8_encode($usuario['nom']);
 					echo "<br/>";
 					echo "<b>Recurso:</b> ";
@@ -59,7 +72,18 @@ function mostrarReservasAdmin(){
 					echo "<br/>";
 					echo "<b>Fecha fin:</b> ";
 					echo utf8_encode($reserva['datefi']);
-					echo "<br><br/>";
+					echo "<br></div><br/>";
+					$fichero="img/$recurso[img]";
+				if(file_exists($fichero)&&(($recurso['img']) != '')){
+					echo "<div class='contimg'><img src='$fichero' width='250' heigth='250' ></div>";
+				}
+				else{
+					echo "<div class='contimg'><img src ='img/no_disponible.jpg'width='250' heigth='250'/></div>";
+				}
+			
+			echo "</div>";
+					echo"</div>";
+					echo "<br>";
 	}
 }
 
