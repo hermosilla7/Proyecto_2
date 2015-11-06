@@ -10,7 +10,19 @@
 			$result_categoria = mysqli_query($con, $consulta_categoria);
 
 
+			//creamos la sesion
+			session_start();
 
+			$nomUsuari = $_SESSION['nom'];
+			$user_id = $_SESSION['id_user'];
+
+			//validamos si se ha hecho o no el inicio de sesion correctamente
+			//si no se ha hecho la sesion nos regresará a index.html
+			if(!isset($_SESSION['nom'])) 
+			{
+			  header('Location: index.html'); 
+			  exit();
+			}
 		?>
 		<div class="container" style="margin-top:10px">
 			<div class="row " style="width:75%;margin-top:20px">
