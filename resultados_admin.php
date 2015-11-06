@@ -25,7 +25,7 @@ function mostrarConsultaAdmin (){
 				<div class="btn btn-primary" id="btnLiberar" name="btnLiberar">
                 	<a href="liberar_admin.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Liberar</a>
                 </div>
-	            <div class="btn btn-success">       	
+	            <div class="btn btn-success" id="btnReparar" name="btnReparar">       	
    					<a href="reparar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reparar</a>
 				</div>
 <?php                 
@@ -42,6 +42,29 @@ function mostrarConsultaAdmin (){
 			
 			echo"</div>";
 			echo "<br/><br>";
+
+			if ($recurso["estado"] == "0"){
+				echo 	"<script>
+					        $(document).ready(function() {
+								$(document.getElementsByName('btnLiberar')).attr('disabled', true);
+								$(document.getElementsByName('btnReparar')).attr('disabled', false);
+							});
+					    </script>";
+			}else if ($recurso["estado"] == "1"){
+				echo 	"<script>
+					        $(document).ready(function() {
+								$(document.getElementsByName('btnLiberar')).attr('disabled', false);
+								$(document.getElementsByName('btnReparar')).attr('disabled', false);
+							});
+					    </script>";
+			} else {
+				echo 	"<script>
+					        $(document).ready(function() {
+								$(document.getElementsByName('btnLiberar')).attr('disabled', false);
+								$(document.getElementsByName('btnReparar')).attr('disabled', true);
+							});
+					    </script>";
+			}
 			
 		}
 	} else {
@@ -86,8 +109,8 @@ function mostrarConsultaAdmin (){
 	            <div class="btn btn-primary" id="btnLiberar" name="btnLiberar">
                 	<a href="liberar_admin.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Liberar</a>
                 </div>
-	            <div class="btn btn-success">          	
-					<a href="reparar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reparar</a>
+	            <div class="btn btn-success" id="btnReparar" name="btnReparar">       	
+   					<a href="reparar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reparar</a>
 				</div>
 <?php   
             echo"</div>";
@@ -105,6 +128,28 @@ function mostrarConsultaAdmin (){
 			
 			echo "<br/><br>";
 			
+			if ($recurso["estado"] == "0"){
+				echo 	"<script>
+					        $(document).ready(function() {
+								$(document.getElementsByName('btnLiberar')).attr('disabled', true);
+								$(document.getElementsByName('btnReparar')).attr('disabled', false);
+							});
+					    </script>";
+			}else if ($recurso["estado"] == "1"){
+				echo 	"<script>
+					        $(document).ready(function() {
+								$(document.getElementsByName('btnLiberar')).attr('disabled', false);
+								$(document.getElementsByName('btnReparar')).attr('disabled', false);
+							});
+					    </script>";
+			} else {
+				echo 	"<script>
+					        $(document).ready(function() {
+								$(document.getElementsByName('btnLiberar')).attr('disabled', false);
+								$(document.getElementsByName('btnReparar')).attr('disabled', true);
+							});
+					    </script>";
+			}
 		}
 	}
 

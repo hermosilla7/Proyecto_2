@@ -1,14 +1,14 @@
 <?php
-	include_once 'header.php';
 	include 'conexion.php';
 
 	//creamos la sesion
 	session_start();
 	$user_id = $_SESSION['id_user'];
 
-	$fecha = date('Y-m-d');
+	$fecha = date("Y-m-d H:i:s");
 
 	$sql_update="update recurso set estado = 0 where id_recurso = $_REQUEST[id_recurso]";
+
 
 	$sql_insert="insert into reserva(id_user, id_recurso, dateini) values 
 		                       ('$user_id','$_REQUEST[id_recurso]', '$fecha')";
@@ -22,9 +22,6 @@
 
 		mysqli_close($con);
 
-		echo "Anunci donat d'alta";
-
-	include "footer.php";
 
 	header("Location: admin.php");
 ?>

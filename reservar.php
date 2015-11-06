@@ -9,6 +9,7 @@
 
 	$sql_update="update recurso set estado = 1 where id_recurso = $_REQUEST[id_recurso]";
 
+
 	$sql_insert="insert into reserva(id_user, id_recurso, dateini) values 
 		                       ('$user_id','$_REQUEST[id_recurso]', '$fecha')";
 

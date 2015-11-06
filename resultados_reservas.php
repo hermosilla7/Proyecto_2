@@ -8,7 +8,7 @@ function mostrarReservas () {
 
 	$sql_reserva = "SELECT * FROM reserva WHERE ";
 
-	$recurso=$_REQUEST['recurso'];
+	$recurso = $_REQUEST['recurso'];
 	$sql_reserva .= "id_recurso = $recurso ORDER BY id_reserva DESC";
 
 		$datos_reserva = mysqli_query($con, $sql_reserva);

@@ -100,7 +100,7 @@
 	<script type="text/javascript">
 		$('#botonAyuda').popover({
 			title: 'Ayuda',
-			content: 'Rellena los campos necesarios',
+			content: 'Elige la opción de categoría y recurso para mostrar resultados, si no hay, no se mostrará nada.',
 			placement: 'right'
 		});
 	</script>
