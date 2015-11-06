@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.12
+-- version 4.4.14
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-11-2015 a las 01:43:33
--- Versión del servidor: 5.6.25
--- Versión de PHP: 5.6.11
+-- Tiempo de generación: 06-11-2015 a las 12:35:51
+-- Versión del servidor: 5.6.26
+-- Versión de PHP: 5.6.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `club_estudio`
 --
-CREATE DATABASE IF NOT EXISTS `club_estudio` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `club_estudio`;
 
 -- --------------------------------------------------------
 
@@ -63,19 +61,19 @@ CREATE TABLE IF NOT EXISTS `incidencia` (
 --
 
 INSERT INTO `incidencia` (`id_incidencia`, `titulo`, `descripcion`, `id_recurso`, `id_usuario`, `fecha`) VALUES
-(1, 'Cargadores de Portátil', 'Los cargadores de los portátiles 01-19 y 01-22 no funcionan. ', 1, 2, '2015-09-21 00:00:00'),
-(2, 'Reparar asiento sala de reuniones', 'Buenos días, mañana se celebrará una reunión muy importante en la sala de reuniones y hemos visto que un par de asientos están en mal estado. Gracias.', 12, 2, '2015-10-05 00:00:00'),
-(3, 'Teclados y ratones aula informática', 'Buenos días, algunos estudiantes me han informado que hay ratones y teclados del aula de informática norte que no funcionan correctamente.  ', 4, 3, '2015-10-06 00:00:00'),
-(4, 'Pantalla portátil carro rota', 'Esta mañana revisando los portátiles antes de clase he observado que el portátil  01-13 tenía la pantalla rota. Es bastante importante cambiarla cuanto antes, necesitamos todos los portátiles.', 1, 4, '2015-10-10 00:00:00'),
-(5, 'Actualización Windows 10', 'Hace un tiempo que siempre que iniciamos este portátil salta un mensaje para actualizar a Windows 10. Nos gustaría que actualizarais el portátil o quitarais el mensaje, es bastante molesto.', 10, 3, '2015-11-04 00:00:00'),
-(6, 'No detecta la SIM', 'Me han asignado el teléfono para las llamadas de empresa, pero no me detecta la segunda SIM. Dejaré el teléfono en recepción.', 6, 4, '2015-11-04 00:00:00'),
-(7, 'Ratones aula informática', 'Me han informado que siguen fallando algunos ratones del aula informática norte.', 4, 2, '2015-11-04 00:00:00'),
-(8, 'Proyector aula Magna', 'El proyector de ha descolgado del techo, lo necesitamos para impartir clase.', 13, 4, '2015-11-04 00:00:00'),
-(9, 'Proyector Asus', 'Hemos cogido el proyector Asus para utilizarlo mientras solucionáis lo del aula Magna, pero la bombilla de este proyector emite colores extraños.', 11, 2, '2015-11-04 00:00:00'),
-(10, 'Cableado despacho reuniones', 'Esta sala cuenta con dos cables RJ45 pero, han desaparecido y llega muy poca conexión de WI-FI.', 3, 3, '2015-11-04 00:00:00'),
-(11, 'Calibrar pizarra táctil', 'La pizarra táctil de este aula está totalmente descalibrada, no podemos utilizarla en este estado.', 14, 3, '2015-11-04 00:00:00'),
-(12, 'Proyector Asus', 'La bombilla se ha fundido, esta tarde necesitamos el proyector para una reunión.', 11, 2, '2015-11-04 00:00:00'),
-(13, 'Carro portátiles', 'Han desaparecido los portátiles 01-18 y 01-19.', 1, 4, '2015-11-04 00:00:00');
+(1, 'Cargadores de Portátil', 'Los cargadores de los portátiles 01-19 y 01-22 no funcionan. ', 1, 2, '2015-09-21 09:22:29'),
+(2, 'Reparar asiento sala de reuniones', 'Buenos días, mañana se celebrará una reunión muy importante en la sala de reuniones y hemos visto que un par de asientos están en mal estado. Gracias.', 12, 2, '2015-10-05 10:37:18'),
+(3, 'Teclados y ratones aula informática', 'Buenos días, algunos estudiantes me han informado que hay ratones y teclados del aula de informática norte que no funcionan correctamente.  ', 4, 3, '2015-10-06 08:33:22'),
+(4, 'Pantalla portátil carro rota', 'Esta mañana revisando los portátiles antes de clase he observado que el portátil  01-13 tenía la pantalla rota. Es bastante importante cambiarla cuanto antes, necesitamos todos los portátiles.', 1, 4, '2015-10-10 13:24:37'),
+(5, 'Actualización Windows 10', 'Hace un tiempo que siempre que iniciamos este portátil salta un mensaje para actualizar a Windows 10. Nos gustaría que actualizarais el portátil o quitarais el mensaje, es bastante molesto.', 10, 3, '2015-11-04 11:24:35'),
+(6, 'No detecta la SIM', 'Me han asignado el teléfono para las llamadas de empresa, pero no me detecta la segunda SIM. Dejaré el teléfono en recepción.', 6, 4, '2015-11-04 10:33:13'),
+(7, 'Ratones aula informática', 'Me han informado que siguen fallando algunos ratones del aula informática norte.', 4, 2, '2015-11-04 17:27:39'),
+(8, 'Proyector aula Magna', 'El proyector de ha descolgado del techo, lo necesitamos para impartir clase.', 13, 4, '2015-11-04 12:21:34'),
+(9, 'Proyector Asus', 'Hemos cogido el proyector Asus para utilizarlo mientras solucionáis lo del aula Magna, pero la bombilla de este proyector emite colores extraños.', 11, 2, '2015-11-04 11:30:00'),
+(10, 'Cableado despacho reuniones', 'Esta sala cuenta con dos cables RJ45 pero, han desaparecido y llega muy poca conexión de WI-FI.', 3, 3, '2015-11-04 12:45:33'),
+(11, 'Calibrar pizarra táctil', 'La pizarra táctil de este aula está totalmente descalibrada, no podemos utilizarla en este estado.', 14, 3, '2015-11-04 11:17:38'),
+(12, 'Proyector Asus', 'La bombilla se ha fundido, esta tarde necesitamos el proyector para una reunión.', 11, 2, '2015-11-04 11:21:33'),
+(13, 'Carro portátiles', 'Han desaparecido los portátiles 01-18 y 01-19.', 1, 4, '2015-11-04 12:19:36');
 
 -- --------------------------------------------------------
 
@@ -98,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `recurso` (
 
 INSERT INTO `recurso` (`id_recurso`, `nombre`, `descr`, `img`, `estado`, `categoria`) VALUES
 (1, 'Carro portátiles', 'Carro de portátiles situado en recepción, contiene de 25 portátiles Compaq y sus cargadores, todos ellos numerados. Especificaciones: Windows 7, procesador Intel I5, 4GB de memoria RAM, disco duro de 500 GB, pantalla 15.6”, conectores VGA y HDMI.\nLa llave de este carro está en secretaría y ha de ser retornada junto al carro.\n', 'carro.jpg', '1', '3'),
-(2, 'Despacho entrevistas', 'Despacho  para entrevistas situado en la primera planta detrás de recepción, puerta 01. Consta de un escritorio y dos sillas de oficina.', 'despacho1.jpg', '1', '2'),
+(2, 'Despacho entrevistas', 'Despacho  para entrevistas situado en la primera planta detrás de recepción, puerta 01. Consta de un escritorio y dos sillas de oficina.', 'despacho1.jpg', '0', '2'),
 (3, 'Despacho reuniones', 'Despacho de reuniones y estudio en grupo, situado en la primera planta detrás de recepción, puerta 02. Consta de una mesa redonda y cinco sillas de oficina.', 'despacho2.jpg', '1', '2'),
 (4, 'Aula informática norte', 'Aula de informática situada en la sala 10. Consta de dieciséis equipos sobremesa, pizarra y un proyector. Especificaciones de los equipos: Windows 7, procesador Intel I3, 2GB de memoria RAM, disco duro de 500GB.', 'informatica1.jpg', '1', '1'),
 (5, 'Aula informática sur', 'Aula de informática situada en la sala 11. Consta de diecinueve equipos portátiles, pizarra y un proyector. Especificaciones de los equipos: Windows 7, procesador Intel I5, 4GB de memoria RAM, disco duro de 1TB.', 'informatica2.jpg', '1', '1'),
@@ -125,23 +123,24 @@ CREATE TABLE IF NOT EXISTS `reserva` (
   `id_recurso` int(11) NOT NULL,
   `dateini` datetime NOT NULL,
   `datefi` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `reserva`
 --
 
 INSERT INTO `reserva` (`id_reserva`, `id_user`, `id_recurso`, `dateini`, `datefi`) VALUES
-(1, 1, 1, '2015-11-03 00:00:00', '2015-11-04 10:00:00'),
-(2, 1, 1, '2015-11-03 00:00:00', '2015-11-05 15:00:00'),
-(3, 2, 3, '2015-11-03 00:00:00', '2015-11-04 08:00:00'),
-(4, 2, 6, '2015-11-03 00:00:00', '2015-11-06 20:00:00'),
-(5, 2, 7, '2015-11-03 00:00:00', '2015-11-03 06:00:00'),
-(6, 2, 5, '2015-11-04 00:00:00', '2015-11-06 06:29:36'),
-(7, 2, 4, '2015-11-05 00:00:00', '2015-11-05 15:46:46'),
-(8, 2, 9, '2015-11-05 00:00:00', '2015-11-06 16:47:57'),
-(9, 2, 11, '2015-11-05 11:35:12', '2015-11-06 07:36:52'),
-(10, 2, 13, '2015-11-06 00:38:47', '2015-11-06 16:52:00');
+(1, 1, 1, '2015-09-21 10:00:00', '2015-09-21 17:00:00'),
+(2, 1, 1, '2015-09-24 10:00:00', '2015-09-26 11:00:00'),
+(3, 2, 3, '2015-10-01 12:00:00', '2015-10-02 08:00:00'),
+(4, 2, 6, '2015-10-06 10:00:00', '2015-10-07 07:00:00'),
+(5, 2, 7, '2015-10-11 08:00:00', '2015-10-11 12:00:00'),
+(6, 2, 5, '2015-10-13 08:00:00', '2015-11-06 06:29:36'),
+(7, 2, 4, '2015-10-13 13:00:00', '2015-10-14 15:46:46'),
+(8, 2, 9, '2015-10-14 08:00:00', '2015-10-14 16:47:57'),
+(9, 2, 11, '2015-11-05 11:35:12', '2015-11-06 14:36:52'),
+(10, 2, 13, '2015-11-06 10:38:47', '2015-11-06 16:52:00'),
+(11, 2, 2, '2015-11-06 12:07:39', '2015-11-06 19:00:00');
 
 -- --------------------------------------------------------
 
@@ -224,7 +223,7 @@ ALTER TABLE `recurso`
 -- AUTO_INCREMENT de la tabla `reserva`
 --
 ALTER TABLE `reserva`
-  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --

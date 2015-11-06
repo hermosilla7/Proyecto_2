@@ -36,7 +36,7 @@
     <header>
     <nav class="navigation">
           <ul>
-            <a href="user.php"><img src ='img/logo.png'width='250' heigth='250'/></a>
+            <li><a href="user.php"><img src ='img/logo.png'width='250' heigth='250'/></a></li>
             <li><a href="busqueda_reservas.php" class="navList">Reservas</a></li>
             <li><a href="incidencias.php" class="navList">Incidencias</a></li>
             <li><a href="logout.php" class="navLogout">Salir</a></li>
@@ -47,7 +47,7 @@
 
                 $nomUsuari = $_SESSION['nom'];
                 $user_id = $_SESSION['id_user']; 
-                echo $user_id;
+              
 
                 //validamos si se ha hecho o no el inicio de sesion correctamente
                 //si no se ha hecho la sesion nos regresará a index.html
@@ -56,17 +56,17 @@
                   header('Location: index.html'); 
                   exit();
                 }
-                echo "<div>
-                      <h4 style='color:white' 'width:280px'>BENVINGUT - $nomUsuari </h4>
-                      </div>";
+                echo "<div class='cont'><div class='perfillog'>
+                      <h4 style='color:white' 'width:280px'>BENVINGUT - $nomUsuari </h4></div>";
+                      
                 $fichero="img/$user_id".".jpg";
                 if(file_exists($fichero)&&(($user_id) != '')){
-                  echo "<div class='contimg'><img src='$fichero' width='50' heigth='50' ></div>";
+                  echo "<div class='perfil'><img src='$fichero' width='50' heigth='50' ></div>";
                 }
                 else{
-                  echo "<div class='contimg'><img src ='img/no_disponible.jpg'width='50' heigth='50'/></div>";
+                  echo "<div class='perfil'><img src ='img/no_disponible.jpg'width='50' heigth='50'/></div>";
                 }
-
+          echo"</div>";
                 ?>
             </li>
           </ul>
