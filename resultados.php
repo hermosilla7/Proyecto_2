@@ -6,9 +6,26 @@ function mostrarConsulta (){
 	//como la sentencia SIEMPRE va a buscar todos los registros de la tabla producto, pongo en la variable $sql esa parte de la sentencia que SI o SI, va a contener
 	$sql = "SELECT * FROM recurso WHERE ";
 
+	// if(!isset($_REQUEST['estado_recurso'])){
+	// 	echo "ISSET YES";
+	// }
+
+	// if(isset($_REQUEST['estado_recurso'])){
+	// 	echo "ISSET NO";
+	// }
+
+	// if($_REQUEST['estado_recurso'] == null){
+	// 	echo "NULL YES";
+	// }
+
+	// if($_REQUEST['estado_recurso'] == ""){
+	// 	echo "VACIO YES";
+	// }
+
 	//VERSION BETA
 	//controlar checkbox
 	if(!isset($_REQUEST['estado_recurso'])){
+		// echo "AAAAAAAAAAAAAAAAAAAAAAAAAA";
 		$sql = "SELECT * FROM recurso";
 		$datos = mysqli_query($con, $sql);
 		//extraemos los productos uno a uno en la variable $anuncio que es un array
@@ -19,6 +36,10 @@ function mostrarConsulta (){
 			echo "<br/>";
 			echo "<b>Contenido:</b> ";
 			echo utf8_encode($recurso['descr']);
+
+			echo "<br/>";
+
+
 			echo "</div><br/>";
 			echo "<div class='botonera'>";
 ?> 
@@ -44,6 +65,7 @@ function mostrarConsulta (){
 			echo "<br/><br>";
 
 			if ($recurso["estado"] == "0"){
+				echo "ENTRA 0:";
 				echo 	"<script>
 					        $(document).ready(function() {
 								$(document.getElementsByName('btnLiberar')).attr('disabled', true);
@@ -51,6 +73,7 @@ function mostrarConsulta (){
 							});
 					    </script>";
 			}else if ($recurso["estado"] == "1"){
+				echo "ENTRA 1:";
 				echo 	"<script>
 					        $(document).ready(function() {
 								$(document.getElementsByName('btnLiberar')).attr('disabled', false);
@@ -65,9 +88,10 @@ function mostrarConsulta (){
 							});
 					    </script>";
 			}
-			
 		}
+		echo "RESULT";
 	} else {
+		echo "NOOOOOOOOOOOOOOOOOOOOOOOOOOO";
 		$count = 0;
 		foreach ($_REQUEST['estado_recurso'] as $opcionEstado[]) {
 		$count+=1;			
