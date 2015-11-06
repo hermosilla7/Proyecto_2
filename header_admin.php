@@ -60,10 +60,10 @@
 
                 $fichero="img/$user_id".".jpg";
                 if(file_exists($fichero)&&(($user_id) != '')){
-                  echo "<div class='contimg'><img src='$fichero' width='50' heigth='50' ></div>";
+                  echo "<div class='perfil'><img src='$fichero' width='50' heigth='50' ></div>";
                 }
                 else{
-                  echo "<div class='contimg'><img src ='img/no_disponible.jpg'width='50' heigth='50'/></div>";
+                  echo "<div class='perfil'><img src ='img/no_disponible.jpg'width='50' heigth='50'/></div>";
                 }
                 echo"</div>";
 

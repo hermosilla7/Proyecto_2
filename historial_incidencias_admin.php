@@ -16,7 +16,8 @@
 		$datos_usuario = mysqli_query($con, $sql_usuario);
 		$recurso = mysqli_fetch_array($datos_recurso);
 		$usuario = mysqli_fetch_array($datos_usuario);
-		echo"<b>Nombre:</b>";
+		echo "<div class='contendor3'>";
+		echo"<div class='textseccion3'><b>Nombre:</b>";
 		echo utf8_encode($incidencia['titulo']);
 		echo "<br/>";
 		echo "<b>Descripción:</b> ";
@@ -31,6 +32,8 @@
 		echo "<b>Fecha:</b> ";
 		echo utf8_encode($incidencia['fecha']);
 		echo "<br></br>";
+		echo "</div>";
+			echo"</div>";
 	}
 
 
