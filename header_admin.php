@@ -36,7 +36,7 @@
     <header>
     <nav class="navigation">
           <ul>
-            <a href="admin.php"><img src ='img/logo.png'width='250' heigth='250'/></a>
+            <li><a href="admin.php"><img src ='img/logo.png'width='250' heigth='250'/></a></li>
             <li><a href="busqueda_reservas_admin.php" class="navList">Reservas</a></li>
             <li><a href="historial_incidencias_admin.php" class="navList">SAT</a></li>
             <li><a href="logout.php" class="navLogout">Salir</a></li>
@@ -55,9 +55,8 @@
                   header('Location: index.html'); 
                   exit();
                 }
-                echo "<div>
-                      <h4 style='color:white' 'width:280px'>BENVINGUT - $nomUsuari </h4>
-                      </div>";
+                echo "<div class='cont'><div class='perfillog'>
+                      <h4 style='color:white' 'width:280px'>BENVINGUT - $nomUsuari </h4></div>";
 
                 $fichero="img/$user_id".".jpg";
                 if(file_exists($fichero)&&(($user_id) != '')){
@@ -66,7 +65,7 @@
                 else{
                   echo "<div class='contimg'><img src ='img/no_disponible.jpg'width='50' heigth='50'/></div>";
                 }
-
+                echo"</div>";
 
                 ?>
             </li>
