@@ -40,7 +40,7 @@ function mostrarConsulta (){
 			echo "<br/>";
 
 
-			echo "</div><br/>";
+			
 			echo "<div class='botonera'>";
 
                echo ' <div class="btn btn-primary" id="btnLiberar'.$recurso['id_recurso'].'" name="btnLiberar">'
@@ -51,7 +51,7 @@ function mostrarConsulta (){
 				</div>
 <?php                 
             echo"  </div>";
-
+			echo "</div><br/>";
 
 			$fichero="img/$recurso[img]";
 			if(file_exists($fichero)&&(($recurso['img']) != '')){
