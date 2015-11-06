@@ -59,6 +59,15 @@
                       <h4 style='color:white' 'width:280px'>BENVINGUT - $nomUsuari </h4>
                       </div>";
 
+                $fichero="img/$user_id".".jpg";
+                if(file_exists($fichero)&&(($user_id) != '')){
+                  echo "<div class='contimg'><img src='$fichero' width='50' heigth='50' ></div>";
+                }
+                else{
+                  echo "<div class='contimg'><img src ='img/no_disponible.jpg'width='50' heigth='50'/></div>";
+                }
+
+
                 ?>
             </li>
           </ul>
