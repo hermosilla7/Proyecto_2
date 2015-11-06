@@ -2,18 +2,9 @@
 	include_once 'conexion.php';
 	include_once 'header_admin.php';
 
-	session_start();
-
 	$nomUsuari = $_SESSION['nom'];
 	$user_id = $_SESSION['id_user'];
 
-	//validamos si se ha hecho o no el inicio de sesion correctamente
-	//si no se ha hecho la sesion nos regresará a index.html
-	if(!isset($_SESSION['nom'])) 
-	{
-	  header('Location: index.html'); 
-	  exit();
-	}
 	  
 	$consulta_incidencias = ("SELECT * FROM incidencia");
 	$result_incidencias = mysqli_query($con, $consulta_incidencias);

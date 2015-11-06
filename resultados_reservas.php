@@ -35,16 +35,6 @@ function mostrarReservas () {
 				echo "<b>Fecha fin:</b> ";
 				echo utf8_encode($reserva['datefi']);
 				echo "<br></div></div><br/>";
-				$fichero="img/$recurso[img]";
-				if(file_exists($fichero)&&(($recurso['img']) != '')){
-					echo "<div class='contimg'><img src='$fichero' width='250' heigth='250' ></div>";
-				}
-				else{
-					echo "<div class='contimg'><img src ='img/no_disponible.jpg'width='250' heigth='250'/></div>";
-				}
-			
-			echo"</div>";
-			echo "<br/><br>";
 			}
 		}
 		else{
@@ -70,13 +60,6 @@ function mostrarReservas () {
 					echo "<b>Fecha fin:</b> ";
 					echo utf8_encode($reserva['datefi']);
 					echo "<br></div></div><br/>";
-					$fichero="img/$recurso[img]";
-					if(file_exists($fichero)&&(($recurso['img']) != '')){
-					echo "<div class='contimg'><img src='$fichero' width='250' heigth='250' ></div>";
-					}
-					else{
-						echo "<div class='contimg'><img src ='img/no_disponible.jpg'width='250' heigth='250'/></div>";
-					}
 	}
 }
 

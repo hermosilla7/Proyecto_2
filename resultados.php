@@ -40,18 +40,21 @@ function mostrarConsulta (){
 			echo "<br/>";
 
 
-			
+			echo "</div><br/>";
 			echo "<div class='botonera'>";
-
-               echo ' <div class="btn btn-primary" id="btnLiberar'.$recurso['id_recurso'].'" name="btnLiberar">'
- ?>             <a href="liberar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Liberar</a>
-                </div> 
-<?php                 echo '<div class="btn btn-success" id="btnReservar'.$recurso['id_recurso'].'" name="btnReservar">'   ?>      	
+ 			
+ 			echo ' <div class="btn btn-primary" id="btnLiberar'.$recurso['id_recurso'].'" name="btnLiberar">';
+?>
+				<a href="liberar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Liberar</a>
+            </div> 
+<?php                
+				echo '<div class="btn btn-success" id="btnReservar'.$recurso['id_recurso'].'" name="btnReservar">';
+?>      	
     				<a href="reservar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
 				</div>
 <?php                 
             echo"  </div>";
-			echo "</div><br/>";
+
 
 			$fichero="img/$recurso[img]";
 			if(file_exists($fichero)&&(($recurso['img']) != '')){
@@ -64,9 +67,7 @@ function mostrarConsulta (){
 			echo"</div>";
 			echo "<br/><br>";
 
-
 			if ($recurso["estado"] == "0"){
-				echo "ENTRA 0:";
 				echo 	"<script>
 					        $(document).ready(function() {
 								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', true);				
@@ -74,7 +75,6 @@ function mostrarConsulta (){
 							});
 					    </script>";
 			}else if ($recurso["estado"] == "1"){
-				echo "ENTRA 1:";
 				echo 	"<script>
 					        $(document).ready(function() {
 								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', false);
@@ -91,7 +91,6 @@ function mostrarConsulta (){
 			}
 		}
 	} else {
-		echo "NOOOOOOOOOOOOOOOOOOOOOOOOOOO";
 		$count = 0;
 		foreach ($_REQUEST['estado_recurso'] as $opcionEstado[]) {
 		$count+=1;			
@@ -129,11 +128,14 @@ function mostrarConsulta (){
 			echo utf8_encode($recurso['descr']);
 			echo "</div><br/>";
 			echo "<div class='botonera'>";
-?>
-                <div class="btn btn-primary" id="btnLiberar" name="btnLiberar">
-                	<a href="liberar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Liberar</a>
-                </div> 
-                <div class="btn btn-success" id="btnReservar" name="btnReservar">          	
+			
+			echo ' <div class="btn btn-primary" id="btnLiberar'.$recurso['id_recurso'].'" name="btnLiberar">';
+?>             
+				<a href="liberar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Liberar</a>
+            </div> 
+<?php                
+				echo '<div class="btn btn-success" id="btnReservar'.$recurso['id_recurso'].'" name="btnReservar">';
+?>      	
     				<a href="reservar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
 				</div>
 <?php   
@@ -155,22 +157,22 @@ function mostrarConsulta (){
 			if ($recurso["estado"] == "0"){
 				echo 	"<script>
 					        $(document).ready(function() {
-								$(document.getElementsByName('btnLiberar')).attr('disabled', true);
-								$(document.getElementsByName('btnReservar')).attr('disabled', false);
+								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', true);				
+								$(document.getElementById('btnReservar".$recurso['id_recurso']."')).attr('disabled', false);
 							});
 					    </script>";
 			}else if ($recurso["estado"] == "1"){
 				echo 	"<script>
 					        $(document).ready(function() {
-								$(document.getElementsByName('btnLiberar')).attr('disabled', false);
-								$(document.getElementsByName('btnReservar')).attr('disabled', true);
+								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', false);
+								$(document.getElementById('btnReservar".$recurso['id_recurso']."')).attr('disabled', true);
 							});
 					    </script>";
 			} else {
 				echo 	"<script>
 					        $(document).ready(function() {
-								$(document.getElementsByName('btnLiberar')).attr('disabled', true);
-								$(document.getElementsByName('btnReservar')).attr('disabled', true);
+								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', true);
+								$(document.getElementById('btnReservar".$recurso['id_recurso']."')).attr('disabled', true);
 							});
 					    </script>";
 			}
